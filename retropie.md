@@ -9,7 +9,7 @@ https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-ad
 
 
 ## /opt/retropie/configs/all/retroarch.cfg
-
+```
 input_player1_a = "z"
 input_player1_b = "shift"
 input_player1_y = "ctrl"
@@ -47,3 +47,4 @@ input_player1_r3 = nul
 input_enable_hotkey_btn = num1
 input_exit_emulator_btm = num3
 input_pause_toggle_btn = num2
+```
