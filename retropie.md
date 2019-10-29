@@ -13,6 +13,8 @@
 
 ## Config
 
+- http://newwiki.arcadecontrols.com/arcade.htm
+
 ## ~/.emulationstation/es_input.cfg
 - Swap start/select a/b
 - maybe not
