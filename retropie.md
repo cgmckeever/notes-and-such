@@ -5,6 +5,10 @@
 - https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx
 - https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
 
+## VI
+
+- sudo apt-get update && sudo apt-get -y install vim
+
 # Key Mapping
 - https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf
 
