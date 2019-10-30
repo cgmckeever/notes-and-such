@@ -37,13 +37,14 @@ https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,
 - /opt/retropie/emulators/advmame/bin/advm
 
 - vi /opt/retropie/configs/mame-advmame/advmame.rc
+```
 device_raw_mousedev[0] /dev/input/mouse0
 device_raw_mousedev[1] /dev/input/mouse1
 
 input_map[p1_trackballx] mouse[0,x] mouse[1,x] mouse[2,x] mouse[3,x]
 input_map[p1_trackbally] mouse[0,y] mouse[1,y] mouse[2,y] mouse[3,y]
 
-
+```
 
 ## /opt/retropie/configs/all/retroarch.cfg
 ```
