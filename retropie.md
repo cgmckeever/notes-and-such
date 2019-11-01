@@ -5,6 +5,15 @@
 - https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx
 - https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
 
+## bluetooth
+
+https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
+- sudo bluetoothctl
+- agent on; default-agent
+- scan on
+- pair XX
+- connect XX
+
 ## VI
 
 - sudo apt-get update && sudo apt-get -y install vim
