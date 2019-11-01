@@ -16,6 +16,7 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - connect XX
 
 - extra: sudo apt-get install bluez
+- sudo busctl tree org.bluez
 
 
 ## VI
