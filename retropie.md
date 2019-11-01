@@ -11,8 +11,10 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - sudo bluetoothctl
 - agent on; default-agent
 - scan on
+- trust XX
 - pair XX
 - connect XX
+
 
 ## VI
 
