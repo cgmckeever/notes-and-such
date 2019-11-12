@@ -6,6 +6,11 @@
 - sudo raspi-config
 - Go to: >Advanced Option > Resolution >
 
+## WIFI
+
+- rfkill list wlan
+- sudo rfkill unblock all
+
 ## VI
 
 - sudo apt-get update && sudo apt-get -y install vim
