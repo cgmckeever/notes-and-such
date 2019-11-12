@@ -60,6 +60,11 @@ input_map[p1_trackbally] mouse[0,y] mouse[1,y] mouse[2,y] mouse[3,y]
 
 ```
 
+## Test GamePads
+
+- cat /proc/bus/input/devices
+- jtest
+
 ## /opt/retropie/configs/all/retroarch.cfg
 ```
 input_player1_a = "z"
