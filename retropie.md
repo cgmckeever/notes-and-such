@@ -1,9 +1,14 @@
 # Setup
 - https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation
-- https://retropie.org.uk/forum/topic/4190/advmame-emulator-not-showing-up-in-retropie-4-0-2
-- https://www.youtube.com/watch?v=VF4hKrjqwUY&index=4&list=PL6fNF9pYPP73Bnxw8iRC9LuLHdczqc9O-
-- https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx
-- https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
+
+## Resolution
+
+- sudo raspi-config
+- Go to: >Advanced Option > Resolution >
+
+## VI
+
+- sudo apt-get update && sudo apt-get -y install vim
 
 ## bluetooth
 
@@ -18,12 +23,12 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - extra: sudo apt-get install bluez
 - sudo busctl tree org.bluez
 
+## Advance Mame
+- https://retropie.org.uk/forum/topic/4190/advmame-emulator-not-showing-up-in-retropie-4-0-2
+- https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
 
-## VI
 
-- sudo apt-get update && sudo apt-get -y install vim
-
-# Key Mapping
+## Key Mapping
 - https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf
 
 # ROMS
@@ -40,6 +45,7 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 
 ## Tank Stick
 
+- https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx
 - enable xarcade2jstick
  - if controller stops works, wipe emulation station controller configs (dumb)
 
