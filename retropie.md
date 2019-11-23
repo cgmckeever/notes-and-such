@@ -71,6 +71,20 @@ input_map[p1_trackbally] mouse[0,y] mouse[1,y] mouse[2,y] mouse[3,y]
 
 ```
 
+## WIImote / Dolphin Bar
+
+```
+device_mouse raw
+device_raw_mousedev[0] /dev/input/mouse0
+device_raw_mousedev[1] /dev/input/mouse1
+device_raw_mousedev[2] /dev/input/mouse2
+device_raw_mousedev[3] /dev/input/mouse3
+device_raw_mousetype[0] ps2
+device_raw_mousetype[1] ps2
+device_raw_mousetype[2] ps2
+device_raw_mousetype[3] ps2
+```
+
 ## Test GamePads
 
 - cat /proc/bus/input/devices
