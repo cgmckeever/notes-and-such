@@ -88,6 +88,13 @@ device_raw_mousetype[2] ps2
 device_raw_mousetype[3] ps2
 ```
 
+### Duck Hunt NES(topia)
+
+https://www.reddit.com/r/RetroArch/comments/9evqxc/nestopia_core_cant_fire_zapper_in_duck_hunt/
+```
+Edit1: Guys, a few minutes after posting this comment, I found a solution ... go to the Input tab of the Retroarch Settings tab, and in the settings of Player2 set the "User 2 Gun Trigger" to the Left Mouse Button. This does not make sense to me, but, it works! :P 
+```
+
 ## Test GamePads
 
 - cat /proc/bus/input/devices
