@@ -73,6 +73,9 @@ input_map[p1_trackbally] mouse[0,y] mouse[1,y] mouse[2,y] mouse[3,y]
 
 ## WIImote / Dolphin Bar
 
+### Games
+https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38
+
 ```
 device_mouse raw
 device_raw_mousedev[0] /dev/input/mouse0
