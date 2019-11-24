@@ -33,8 +33,14 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
 
 
-## Key Mapping
+# Key Mapping
 - https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf
+
+## Test GamePads
+
+- cat /proc/bus/input/devices
+- ls /dev/input/js*
+- jstest /dev/input/js*
 
 ## RetroArch
 
@@ -48,6 +54,9 @@ input_player1_select_btn = "x"
 where x is the button number you wish to remap the select button to.
 ```
 
+## ~/.emulationstation/es_input.cfg
+- Swap start/select a/b (maybe not)
+
 # ROMS
 - https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
 - Arcade Punks
@@ -56,11 +65,7 @@ where x is the button number you wish to remap the select button to.
 
 - http://newwiki.arcadecontrols.com/arcade.htm
 
-## ~/.emulationstation/es_input.cfg
-- Swap start/select a/b
-- maybe not
-
-## Tank Stick
+# Tank Stick
 
 - https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx
 - enable xarcade2jstick
@@ -70,8 +75,13 @@ where x is the button number you wish to remap the select button to.
 
 https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
 
-### Test Mouse
+# Mouse
+
+## Test
+
 - /opt/retropie/emulators/advmame/bin/advm
+
+## Configure
 
 - vi /opt/retropie/configs/mame-advmame/advmame.rc
 ```
@@ -112,11 +122,7 @@ https://retropie.org.uk/forum/topic/16915/retroarch-light-gun-game-mode-selectio
 As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
 ```
 
-## Test GamePads
-
-- cat /proc/bus/input/devices
-- ls /dev/input/js*
-- jstest /dev/input/js*
+# Retroarch config
 
 ## /opt/retropie/configs/all/retroarch.cfg
 ```
