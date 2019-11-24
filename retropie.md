@@ -95,6 +95,11 @@ https://www.reddit.com/r/RetroArch/comments/9evqxc/nestopia_core_cant_fire_zappe
 Edit1: Guys, a few minutes after posting this comment, I found a solution ... go to the Input tab of the Retroarch Settings tab, and in the settings of Player2 set the "User 2 Gun Trigger" to the Left Mouse Button. This does not make sense to me, but, it works! :P 
 ```
 
+https://retropie.org.uk/forum/topic/16915/retroarch-light-gun-game-mode-selection/14
+```
+As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
+```
+
 ## Test GamePads
 
 - cat /proc/bus/input/devices
