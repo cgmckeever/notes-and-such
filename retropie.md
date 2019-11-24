@@ -36,6 +36,18 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 ## Key Mapping
 - https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf
 
+## RetroArch
+
+https://github.com/RetroPie/RetroPie-Setup/wiki/Nintendo-Entertainment-System
+```
+Either Remap the select button
+
+In the NES RetroArch config file, /opt/retropie/configs/nes/retroarch.cfg, above the #include" line, add the following line:
+
+input_player1_select_btn = "x"
+where x is the button number you wish to remap the select button to.
+```
+
 # ROMS
 - https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
 - Arcade Punks
