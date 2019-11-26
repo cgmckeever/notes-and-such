@@ -61,6 +61,9 @@ where x is the button number you wish to remap the select button to.
 - https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
 - Arcade Punks
 
+## Compudaze
+-- remove bezels in emulator config
+
 ## Config
 
 - http://newwiki.arcadecontrols.com/arcade.htm
