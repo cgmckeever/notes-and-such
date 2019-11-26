@@ -54,6 +54,12 @@ input_player1_select_btn = "x"
 where x is the button number you wish to remap the select button to.
 ```
 
+### REmove Frame Rate
+
+```
+Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless you have system / core / game overrides). In the GUI is under Onscreen Display > Onscreen Notifications > Display Frame Count.
+```
+
 ## ~/.emulationstation/es_input.cfg
 - Swap start/select a/b (maybe not)
 
