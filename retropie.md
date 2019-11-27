@@ -44,6 +44,8 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 
 ## RetroArch
 
+- Log:  /dev/shm/runcommand.log
+
 https://github.com/RetroPie/RetroPie-Setup/wiki/Nintendo-Entertainment-System
 ```
 Either Remap the select button
@@ -54,7 +56,7 @@ input_player1_select_btn = "x"
 where x is the button number you wish to remap the select button to.
 ```
 
-### REmove Frame Rate
+### Remove Frame Rate
 
 ```
 Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless you have system / core / game overrides). In the GUI is under Onscreen Display > Onscreen Notifications > Display Frame Count.
