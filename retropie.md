@@ -42,6 +42,10 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - ls /dev/input/js*
 - jstest /dev/input/js*
 
+### Gamepad select
+
+- https://github.com/meleu/RetroPie-joystick-selection
+
 ## RetroArch
 
 - Log:  /dev/shm/runcommand.log
