@@ -115,6 +115,8 @@ https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,
 
 # Mouse
 
+- https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
+
 ## Test
 
 - /opt/retropie/emulators/advmame/bin/advm
