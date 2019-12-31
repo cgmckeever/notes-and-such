@@ -65,6 +65,23 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
   </inputConfig>
 ```
 
+## TOMEE NES USB
+
+- https://github.com/libretro/retroarch-joypad-autoconfig/blob/master/udev/Tomee_NES_to_USB_Adapter.cfg
+```
+  <inputConfig type="joystick" deviceName=" NES PC Game Pad     NES PC Game Pad   " deviceGUID="03000000571d00002100000010010000">
+     <input name="a" type="button" id="0" value="1" />
+     <input name="b" type="button" id="1" value="1" />
+     <input name="down" type="axis" id="1" value="1" />
+     <input name="hotkeyenable" type="button" id="2" value="1" />
+     <input name="left" type="axis" id="0" value="-1" />
+     <input name="right" type="axis" id="0" value="1" />
+     <input name="select" type="button" id="2" value="1" />
+     <input name="start" type="button" id="3" value="1" />
+     <input name="up" type="axis" id="1" value="-1" />
+   </inputConfig>
+```
+
 ### Gamepad select
 
 - https://github.com/meleu/RetroPie-joystick-selection
