@@ -13,4 +13,4 @@ elif arg == 'select':
 elif arg == 'exit':
     print('exit emulator')
     device.emit(uinput.KEY_LEFTSHIFT, 1)
-    device.emit(uinput.KEY_ESCAPE, 1)
+    device.emit(uinput.KEY_ESC, 1)
