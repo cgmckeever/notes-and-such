@@ -1,4 +1,5 @@
 import uinput
+import sys
 
 arg = sys.argv[1]
 
