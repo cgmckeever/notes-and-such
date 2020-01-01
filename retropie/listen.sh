@@ -11,14 +11,14 @@ case $1 in
     ;;
     "exit")
         echo "exit emulation"
-        sudo keypress.py exit
+        sudo python keypress.py exit
     ;;
     "select")
         echo "select key"
-        sudo keypress.py select
+        sudo python keypress.py select
     ;;
     "start")
         echo "start key"
-        sudo keypress.py start
+        sudo python keypress.py start
     ;;
 esac
