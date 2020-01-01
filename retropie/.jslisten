@@ -1,0 +1,34 @@
+[shutdown]
+program="/home/pi/scripts/listen.sh shutdown"
+button1=9
+button2=0
+button3=
+button4=
+
+[reboot]
+program="/home/pi/scripts/listen.sh reboot"
+button1=9
+button2=2
+button3=
+button4=
+
+[exit]
+program="/home/pi/scripts/listen.sh exit"
+button1=9
+button2=8
+button3=
+button4=
+
+[select]
+program="/home/pi/scripts/listen.sh select"
+button1=9
+button2=6
+button3=
+button4=
+
+[start]
+program="/home/pi/scripts/listen.sh start"
+button1=9
+button2=7
+button3=
+button4=
