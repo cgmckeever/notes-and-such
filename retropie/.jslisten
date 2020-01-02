@@ -12,6 +12,13 @@ button2=2
 button3=
 button4=
 
+[sleep]
+program="/home/pi/scripts/listen.sh sleep"
+button1=9
+button2=3
+button3=
+button4=
+
 [exit]
 program="/home/pi/scripts/listen.sh exit"
 button1=9
