@@ -6,6 +6,10 @@
 - sudo raspi-config
 - Go to: >Advanced Option > Resolution >
 
+## Audio 
+
+- static `/boot/config.txt` `audio_pwm_mode=2`
+
 ## WIFI
 
 - rfkill list wlan
