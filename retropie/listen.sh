@@ -16,7 +16,7 @@ case $1 in
         mode="1"
         if [ "${array[1]}" == "1" ]; then mode=0; fi
         vcgencmd display_power $mode
-        sudo amixer cset numid=$mode
+        sudo amixer cset numid=2 $mode
     ;;
     "exit")
         echo "exit emulation"
