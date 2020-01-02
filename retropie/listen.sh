@@ -1,6 +1,3 @@
-fb0              hidraw3    loop5    net               ram12               ram9   tty0     tty19  tty29  tty39  tty49  tty59  uhid       vcs4     vhci
-pi@retropie-cdaze:~ $ vi ../.jslisten
-pi@retropie-cdaze:~ $ cat .jslisten
 #!/bin/bash
 
 case $1 in
