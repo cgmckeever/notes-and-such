@@ -1,7 +1,10 @@
+fb0              hidraw3    loop5    net               ram12               ram9   tty0     tty19  tty29  tty39  tty49  tty59  uhid       vcs4     vhci
+pi@retropie-cdaze:~ $ vi ../.jslisten
+pi@retropie-cdaze:~ $ cat .jslisten
 #!/bin/bash
 
 case $1 in
-    "shutdown")       
+    "shutdown")
         echo "shutdown"
         sudo shutdown -h now
     ;;
@@ -11,14 +14,14 @@ case $1 in
     ;;
     "exit")
         echo "exit emulation"
-        sudo python keypress.py exit
+        sudo python /home/pi/scripts/keypress.py exit
     ;;
     "select")
         echo "select key"
-        sudo python keypress.py select
+        sudo python /home/py/scripts/keypress.py select
     ;;
     "start")
         echo "start key"
-        sudo python keypress.py start
+        sudo python /home/pi/scripts/keypress.py start
     ;;
 esac
