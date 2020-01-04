@@ -24,7 +24,7 @@ case $1 in
     ;;
     "select")
         echo "select key"
-        sudo python /home/py/scripts/keypress.py select
+        sudo python /home/pi/scripts/keypress.py select
     ;;
     "start")
         echo "start key"
