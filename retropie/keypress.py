@@ -19,6 +19,10 @@ if arg == 'start':
     device.emit(uinput.KEY_ENTER, 0)
 elif arg == 'select':
     print('SELECT press')
+    device = create_input(0.2);
+    device.emit(uinput.KEY_LEFTSHIFT, 1)
+    time.sleep(0.2)
+    device.emit(uinput.KEY_LEFTSHIFT, 0) 
 elif arg == 'exit':
     print('SHIFT/ESCAPE press')
     device = create_input(0.2)
