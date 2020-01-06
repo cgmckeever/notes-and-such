@@ -62,6 +62,20 @@ device_raw_mousetype[2] ps2
 device_raw_mousetype[3] ps2
 ```
 
+## Mame2003
+
+- retroarch-core-options.cfg
+
+```
+mame2003-dialsharexy = "enable"
+mame2003-mame_current_mouse_enable = "enabled"
+```
+
+- /opt/retropie/configs/arcade/retroarch.cfg
+```
+input_player1_mouse_index = "XXX"
+```
+
 # GamePads 
 
 ## Emulation Station
