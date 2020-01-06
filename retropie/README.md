@@ -33,21 +33,55 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - extra: sudo apt-get install bluez
 - sudo busctl tree org.bluez
 
+# Trackball
+
+- https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
+
 ## Advance Mame
+
 - https://retropie.org.uk/forum/topic/4190/advmame-emulator-not-showing-up-in-retropie-4-0-2
 - https://retropie.org.uk/forum/topic/106/trackball-working-in-mame4all-but-not-advmame/3
 
+### Test
 
-# Key Mapping
+- /opt/retropie/emulators/advmame/bin/advm
+
+### Configure
+
+- /opt/retropie/configs/mame-advancemame/advmame-1.4.rc
+
+```
+device_mouse raw
+device_raw_mousedev[0] /dev/input/mouse0
+device_raw_mousedev[1] /dev/input/mouse1
+device_raw_mousedev[2] /dev/input/mouse2
+device_raw_mousedev[3] /dev/input/mouse3
+device_raw_mousetype[0] ps2
+device_raw_mousetype[1] ps2
+device_raw_mousetype[2] ps2
+device_raw_mousetype[3] ps2
+```
+
+# GamePads 
+
+## Emulation Station
+
+- ~/.emulationstation/es_input.cfg
+
+## Joystick Select
+
+- https://github.com/meleu/RetroPie-joystick-selection
+
+## Key Mapping
 - https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf
 
-## Test GamePads
+## Test
 
 - cat /proc/bus/input/devices
 - ls /dev/input/js*
 - jstest /dev/input/js*
 
-### USB ENCODER
+## DragonRise USB ENCODER
 
 ```
  <inputConfig type="joystick" deviceName="DragonRise Inc.   Generic   USB  Joystick  " deviceGUID="03000000790000000600000010010000">
@@ -86,11 +120,24 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
    </inputConfig>
 ```
 
-### Gamepad select
+## WIImote / Dolphin Bar
 
-- https://github.com/meleu/RetroPie-joystick-selection
+### Games
+https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38
 
-## RetroArch
+### Duck Hunt NES(topia)
+
+- https://www.reddit.com/r/RetroArch/comments/9evqxc/nestopia_core_cant_fire_zapper_in_duck_hunt/
+```
+Edit1: Guys, a few minutes after posting this comment, I found a solution ... go to the Input tab of the Retroarch Settings tab, and in the settings of Player2 set the "User 2 Gun Trigger" to the Left Mouse Button. This does not make sense to me, but, it works! :P 
+```
+
+- https://retropie.org.uk/forum/topic/16915/retroarch-light-gun-game-mode-selection/14
+```
+As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
+```
+
+# RetroArch
 
 - Log:  /dev/shm/runcommand.log
 
@@ -104,23 +151,20 @@ input_player1_select_btn = "x"
 where x is the button number you wish to remap the select button to.
 ```
 
-### Remove Frame Rate
+## Remove Frame Rate
 
 ```
 Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless you have system / core / game overrides). In the GUI is under Onscreen Display > Onscreen Notifications > Display Frame Count.
 ```
-
-## ~/.emulationstation/es_input.cfg
-- Swap start/select a/b (maybe not)
 
 # ROMS
 - https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
 - Arcade Punks
 
 ## Compudaze
--- remove bezels in emulator config
+-- remove bezels in retroarch emulator config
 
-## Config
+## Input Config
 
 - http://newwiki.arcadecontrols.com/arcade.htm
 
@@ -134,13 +178,6 @@ Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless
 
 https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
 
-# Mouse
-
-- https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
-
-## Test
-
-- /opt/retropie/emulators/advmame/bin/advm
 
 ## Configure
 
@@ -154,38 +191,9 @@ input_map[p1_trackbally] mouse[0,y] mouse[1,y] mouse[2,y] mouse[3,y]
 
 ```
 
-## WIImote / Dolphin Bar
+## Retroarch config
 
-### Games
-https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38
-
-```
-device_mouse raw
-device_raw_mousedev[0] /dev/input/mouse0
-device_raw_mousedev[1] /dev/input/mouse1
-device_raw_mousedev[2] /dev/input/mouse2
-device_raw_mousedev[3] /dev/input/mouse3
-device_raw_mousetype[0] ps2
-device_raw_mousetype[1] ps2
-device_raw_mousetype[2] ps2
-device_raw_mousetype[3] ps2
-```
-
-### Duck Hunt NES(topia)
-
-https://www.reddit.com/r/RetroArch/comments/9evqxc/nestopia_core_cant_fire_zapper_in_duck_hunt/
-```
-Edit1: Guys, a few minutes after posting this comment, I found a solution ... go to the Input tab of the Retroarch Settings tab, and in the settings of Player2 set the "User 2 Gun Trigger" to the Left Mouse Button. This does not make sense to me, but, it works! :P 
-```
-
-https://retropie.org.uk/forum/topic/16915/retroarch-light-gun-game-mode-selection/14
-```
-As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
-```
-
-# Retroarch config
-
-## /opt/retropie/configs/all/retroarch.cfg
+- /opt/retropie/configs/all/retroarch.cfg
 ```
 input_player1_a = "z"
 input_player1_b = "shift"
