@@ -81,6 +81,7 @@ input_player1_mouse_index = "XXX"
 ## Emulation Station
 
 - ~/.emulationstation/es_input.cfg
+- Not saving https://retropie.org.uk/forum/topic/24483/es_input-cfg-wont-update-retroarch-autoconfigs-not-created-error-saving-manually/16
 
 ## Joystick Select
 
