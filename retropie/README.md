@@ -97,6 +97,7 @@ input_player1_mouse_index = "XXX"
 
 ## DragonRise USB ENCODER
 
+### ES Config
 ```
  <inputConfig type="joystick" deviceName="DragonRise Inc.   Generic   USB  Joystick  " deviceGUID="03000000790000000600000010010000">
     <input name="a" type="button" id="1" value="1" />
@@ -119,7 +120,10 @@ input_player1_mouse_index = "XXX"
 
 ## TOMEE NES USB
 
+### Retroarch
 - https://github.com/libretro/retroarch-joypad-autoconfig/blob/master/udev/Tomee_NES_to_USB_Adapter.cfg
+
+### ES Config
 ```
   <inputConfig type="joystick" deviceName=" NES PC Game Pad     NES PC Game Pad   " deviceGUID="03000000571d00002100000010010000">
      <input name="a" type="button" id="0" value="1" />
@@ -132,6 +136,35 @@ input_player1_mouse_index = "XXX"
      <input name="start" type="button" id="3" value="1" />
      <input name="up" type="axis" id="1" value="-1" />
    </inputConfig>
+```
+
+## Mayflash MegaDrive
+
+### Retroarch
+
+```
+input_device = "Mayflash limited Mayflash MD USB Adapter"
+input_driver = "udev"
+input_l_btn = "6"
+input_load_state_btn = "6"
+input_start_btn = "9"
+input_exit_emulator_btn = "9"
+input_down_btn = "14"
+input_r_btn = "2"
+input_save_state_btn = "2"
+input_right_btn = "13"
+input_state_slot_increase_btn = "13"
+input_select_btn = "7"
+input_left_btn = "15"
+input_state_slot_decrease_btn = "15"
+input_up_btn = "12"
+input_a_btn = "1"
+input_b_btn = "0"
+input_reset_btn = "0"
+input_enable_hotkey_btn = "7"
+input_x_btn = "4"
+input_menu_toggle_btn = "4"
+input_y_btn = "3"
 ```
 
 ## WIImote / Dolphin Bar
