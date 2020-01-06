@@ -3,10 +3,12 @@
 case $1 in
     "shutdown")
         echo "shutdown"
+        sudo amixer cset numid=2 1
         sudo shutdown -h now
     ;;
     "reboot")
         echo "rebooting"
+        sudo amixer cset numid=2 1
         sudo reboot
     ;;
     "sleep")
