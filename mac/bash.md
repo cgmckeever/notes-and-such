@@ -21,7 +21,7 @@ fi
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
 repo_name() {
-  basename $(git remote get-url origin 2> /dev/null | sed -En "s/(.*).git/ (\1: /p") 2> /dev/null
+  basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -En "s/(.*).git/ (\1: /p"
 }
 
 parse_git_branch() {
