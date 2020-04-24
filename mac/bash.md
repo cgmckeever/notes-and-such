@@ -20,15 +20,15 @@ fi
 # brew install bash-completion
 [[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
 
-repo_name() {
-  basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -En "s/(.*).git/ (\1: /p"
-}
-
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1)/'
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
-export PS1="\u@\h \W\[\033[32m\]\$(repo_name)$(parse_git_branch)\[\033[00m\] $ "
+repo_branch() {
+  echo "$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -En "s/(.*).git/ (\1: /p")$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/\1)/')"
+}
+
+export PS1="\u@\h \W\[\033[32m\]\$(repo_branch)\[\033[00m\] $ "
 ```
 
 ## .bash_profile
