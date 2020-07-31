@@ -1,0 +1,29 @@
+curl -d '{"preset":"play metallica complete", "user":"r3"}' -H "Content-Type: application/json" -X POST http://localhost:3000/assistant
+
+
+
+curl -d '{"command":"Motion Detected in Backyard", "user":"jonah", "broadcast":"true"}' -H "Content-Type: application/json" -X POST http://localhost:3000/assistant
+
+
+curl -d '{"command":"play music on google play", "user":"cybertron", "converse":"true"}' -H "Content-Type: application/json" -X POST http://localhost:3000/assistant
+
+
+
+cast-web-api --hostname=localhost --port=3020
+
+
+{"preset1":[{"mediaTitle":"NPR","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"LIVE","mediaImageUrl":"https://www.wbez.org/"}],"preset2":[{"mediaTitle":"Preset 2","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset3":[{"mediaTitle":"Preset 3","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset4":[{"mediaTitle":"Preset 4","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset5":[{"mediaTitle":"Preset 5","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset6":[{"mediaTitle":"Preset 6","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}]}
+
+
+https://dl.dropboxusercontent.com/s/lo7ybo8a3235ocl/soundwave2.mp3
+
+
+https://stream.wbez.org/WBEZ-npr128.mp3
+
+
+{"type":"MEDIA_STATUS","status":[{"mediaSessionId":1,"playbackRate":1,"playerState":"BUFFERING","currentTime":0,"supportedMediaCommands":274447,"volume":{"level":1,"muted":false},"activeTrackIds":[],"media":{"contentId":"https://stream.wbez.org/WBEZ-npr128.mp3","streamType":"LIVE","contentType":"audio/mp3","metadata":{"metadataType":0,"title":"WBEZ Chicago","subtitle":"WBEZ 91.5 Live Stream"},"duration":null,"tracks":[{"trackId":1,"type":"AUDIO"}],"customData":{"stationName":"WBEZ Chicago","stationLogo":"https://media.npr.org/images/stations/nprone_logos/wbez.png","streamName":"WBEZ 91.5 Live Stream"},"breaks":[],"breakClips":[]},"currentItemId":1,"repeatMode":"REPEAT_OFF"}],"requestId":0}
+
+{"preset1":{"mediaTitle":"NPR","mediaSubtitle":"WBEZ","mediaType":"audio/mp3","mediaUrl":"https://stream.wbez.org/WBEZ-npr128.mp3","mediaStreamType":"BUFFERED","mediaImageUrl":"https://media.npr.org/images/stations/nprone_logos/wbez.png"},"preset2":{"mediaTitle":"Preset 2","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""},"preset3":{"mediaTitle":"Preset 3","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""},"preset4":{"mediaTitle":"Preset 4","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""},"preset5":{"mediaTitle":"Preset 5","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""},"preset6":{"mediaTitle":"Preset 6","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}}
+
+
+{"preset1":[{"mediaTitle":"NPR","mediaSubtitle":"WBEZ","mediaType":"audio/mp3","mediaUrl":"https://stream.wbez.org/WBEZ-npr128.mp3","mediaStreamType":"LIVE","mediaImageUrl":"https://media.npr.org/images/stations/nprone_logos/wbez.png"}],"preset2":[{"mediaTitle":"Preset 2","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset3":[{"mediaTitle":"Preset 3","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset4":[{"mediaTitle":"Preset 4","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset5":[{"mediaTitle":"Preset 5","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}],"preset6":[{"mediaTitle":"Preset 6","mediaSubtitle":"","mediaType":"","mediaUrl":"","mediaStreamType":"","mediaImageUrl":""}]}
