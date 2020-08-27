@@ -26,16 +26,16 @@ fi
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
 repo() {
-  REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null)
+  REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -e 's/\.git//')
   echo " ${REPO}"
 }
 
 branch() {
-  BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+  BRANCH=$(git branch 2> /dev/null | sed -e 's/* \(.*\)/(\1)/')
   echo " ${BRANCH}"
 }
 
-export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(branch)\[\033[00m\] > "
+export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(repo)\$(branch)\[\033[00m\] > "
 ```
 
 ## .bash_profile
