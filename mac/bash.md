@@ -27,12 +27,16 @@ source /usr/local/etc/bash_completion.d/git-completion.bash
 
 repo() {
   REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -e 's/\.git//')
-  echo " ${REPO}"
+  if [ ! -z $REPO ]; then
+    echo " ${REPO}"
+  fi
 }
 
 branch() {
   BRANCH=$(git branch 2> /dev/null | sed -e 's/* \(.*\)/(\1)/')
-  echo " ${BRANCH}"
+  if [ ! -z $REPO ]; then
+    echo " ${BRANCH}"
+  fi
 }
 
 export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(repo)\$(branch)\[\033[00m\] > "
