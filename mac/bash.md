@@ -19,9 +19,11 @@ if [ -f `brew --prefix`/etc/bash_completion ]; then
 fi
 
 ## Git branch in prompt.
-# brew install bash-completion
+# sudo find / -type f -name "git-completion.bash"
+# brew install bash-completion (if not installed)
+# sudo cp /current/path/to/your/git-completion.bash /usr/local/etc/bash_completion.d/git-completion.bash
 #
-[[ -r "/usr/local/etc/profile.d/bash_completion.sh" ]] && . "/usr/local/etc/profile.d/bash_completion.sh"
+source /usr/local/etc/bash_completion.d/git-completion.bash
 
 repo() {
   REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null)
@@ -33,7 +35,7 @@ branch() {
   echo " ${BRANCH}"
 }
 
-export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(branch)\[\033[00m\]$ "
+export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(branch)\[\033[00m\] > "
 ```
 
 ## .bash_profile
