@@ -34,12 +34,12 @@ repo() {
 
 branch() {
   BRANCH=$(git branch 2> /dev/null | sed -e 's/* \(.*\)/(\1)/')
-  if [ ! -z $REPO ]; then
+  if [ ! -z $BRANCH ]; then
     echo " ${BRANCH}"
   fi
 }
 
-export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(repo)\$(branch)\[\033[00m\] > "
+export PS1="\u@\h \[\033[36m\]\W\[\033[32m\]\$(repo)\$(branch)>\[\033[00m\] "
 ```
 
 ## .bash_profile
