@@ -44,9 +44,9 @@ repo() {
 branch() {
    REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null)
     if [ ! -z $REPO ]; then
-        BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+        BRANCH=$(git symbolic-ref --short -q HEAD)
         if [ ! -z $BRANCH ]; then
-            echo " ${BRANCH}"
+            echo " (${BRANCH})"
         else
             echo -e " $RED[detached]"
         fi
