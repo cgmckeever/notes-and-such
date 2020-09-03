@@ -2,16 +2,30 @@
 
 ## .bashrc
 ```
-export PATH="/usr/local/bin:$PATH"
 
-## node
-#
-export JAVA_HOME=$(/usr/libexec/java_home)
-. ~/.nvm/nvm.sh
+alias resource='source ~/.bashrc'
 
-export NVM_DIR="/Users/cgmckeever/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+# GO
+export GOPATH=$HOME/go
+export PATH=$PATH:$GOPATH/bin
+export GOROOT=/usr/local/opt/go/libexec
+export PATH=$PATH:$GOROOT/bin
+export GOSUMDB=off
 
+GRAY='\[\033[1;30m\]'
+RED='\[\033[1;31m\]'
+GREEN='\[\033[1;32m\]'
+YELLOW='\[\033[1;33m\]'
+PURPLE='\[\033[1;35m\]'
+WHITE='\[\033[1;37m\]'
+BLUE='\[\033[1;34m\]'
+CYAN='\[\033[1;36m\]'
+NC='\[\033[0m\]'
+
+# BREW (is this needed)
+if [ -f `brew --prefix`/etc/bash_completion ]; then
+    . `brew --prefix`/etc/bash_completion
+fi
 
 ## Git branch in prompt.
 # sudo find / -type f -name "git-completion.bash"
@@ -20,21 +34,26 @@ export NVM_DIR="/Users/cgmckeever/.nvm"
 #
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
-repo() {
-  REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -e 's/\.git//')
-  if [ ! -z $REPO ]; then
-    echo " ${REPO}"
-  fi
-}
+REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -e 's/\.git//')
+REPO_DISPLAY=""
+if [ ! -z $REPO ]; then
+    REPO_DISPLAY=" ${REPO}"
+fi
 
-branch() {
-  BRANCH=$(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-  if [ ! -z $BRANCH ]; then
-    echo " ${BRANCH}"
-  fi
-}
+BRANCH_DISPLAY=""
+if [ ! -z $REPO ]; then
+    BRANCH=$(git symbolic-ref --short -q HEAD)
+    if [ ! -z $BRANCH ]; then
+        BRANCH_DISPLAY=" (${BRANCH})"
+    else
+        BRANCH_DISPLAY=" ${RED}[detached]"
+    fi
+fi
 
-export PS1="\u@\h \[\033[36m\]\W/\[\033[32m\]\$(repo)\$(branch)>\[\033[00m\] "
+export PROMPT=$PS1
+export PS1="\u@\h ${CYAN}\W/${GREEN}${REPO_DISPLAY}${BRANCH_DISPLAY}> ${WHITE}"
+
+
 ```
 
 ## .bash_profile
