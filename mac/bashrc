@@ -51,7 +51,8 @@ prompt_command() {
         BRANCH="${RED}[detached]"
     fi
 
-    PS1="\u@\h ${CYAN}\W/ ${GREEN}${REPO} ${BRANCH}> ${WHITE}"
+    DIR="${CYAN}\W/"
+    PS1="\u@\h ${DIR} ${GREEN}${REPO} ${BRANCH}> ${WHITE}"
 }
 
 export PROMPT=$PS1
