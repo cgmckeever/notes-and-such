@@ -47,7 +47,7 @@ branch() {
 prompt_command() {
     branch
 
-    if [ -z $BRANCH ]; then
+    if [ -z $BRANCH ] && [ ! -z $REPO ]; then
         BRANCH="${RED}[detached]"
     fi
 
