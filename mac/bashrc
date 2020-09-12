@@ -30,25 +30,29 @@ fi
 #
 source /usr/local/etc/bash_completion.d/git-completion.bash
 
+REPO=""
 repo() {
     REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null | sed -e 's/\.git//')
-    if [ ! -z $REPO ]; then
-        echo " ${REPO}"
-    fi
 }
 
+BRANCH=""
 branch() {
-   REPO=$(basename $(git remote get-url origin 2> /dev/null) 2> /dev/null)
+   repo
+   BRANCH=""
     if [ ! -z $REPO ]; then
         BRANCH=$(git symbolic-ref --short -q HEAD)
-        if [ ! -z $BRANCH ]; then
-            echo " (${BRANCH})"
-        else
-            echo " $RED[detached]"
-        fi
     fi
 }
 
+prompt_command() {
+    branch
+
+    if [ -z $BRANCH ]; then
+        BRANCH="${RED}[detached]"
+    fi
+
+    PS1="\u@\h ${CYAN}\W/ ${GREEN}${REPO} ${BRANCH}> ${WHITE}"
+}
 
 export PROMPT=$PS1
-export PS1="\u@\h $CYAN\W/$GREEN\$(repo)\$(branch)> $WHITE"
+PROMPT_COMMAND=prompt_command
