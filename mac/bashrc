@@ -50,16 +50,16 @@ prompt_command() {
     repo_display=""
     branch_display=""
     if [ ! -z $REPO ]; then
-        repo_display="${GREEN}${REPO}"
+        repo_display=" ${GREEN}${REPO}"
         if [ -z $BRANCH ]; then
-            branch_display="${RED}[detached]"
+            branch_display=" ${RED}[detached]"
         else
-            branch_display="(${BRANCH})"
+            branch_display=" (${BRANCH})"
         fi
     fi
 
     DIR="${CYAN}\W/"
-    PS1="\u@\h ${DIR} ${repo_display} ${branch_display}> ${WHITE}"
+    PS1="\u@\h ${DIR}${repo_display}${branch_display}> ${WHITE}"
 }
 
 export PROMPT=$PS1
