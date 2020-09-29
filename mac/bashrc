@@ -44,8 +44,16 @@ branch() {
     fi
 }
 
+VENV=""
+venv() {
+    if [[ "$VIRTUAL_ENV" != "" ]]; then
+        VENV=$(basename $VIRTUAL_ENV)
+    fi
+}
+
 prompt_command() {
     branch
+    venv
 
     repo_display=""
     branch_display=""
@@ -58,8 +66,13 @@ prompt_command() {
         fi
     fi
 
+    venv_display=""
+    if [ ! -z $VENV ]; then
+        venv_display="[${VENV}] "
+    fi
+
     DIR="${CYAN}\W/"
-    PS1="\u@\h ${DIR}${repo_display}${branch_display}> ${WHITE}"
+    PS1="${venv_display}\u@\h ${DIR}${repo_display}${branch_display}> ${WHITE}"
 }
 
 export PROMPT=$PS1
