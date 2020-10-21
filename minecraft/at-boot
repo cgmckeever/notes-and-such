@@ -1,33 +1,37 @@
-cat minecraft/start.sh
-#!/bin/bash
+# Prereqs
 
-#Standard Minecraft
-cd /home/pi/minecraft
-exec java -jar -Xms512M -Xmx2048M spigot-1.16.3.jar nogui
+apt -y update && apt -y install default-jre screen git
+apt install default-jdk
 
-cat /etc/systemd/system/minecraft.service
+# Install
+
+mkdir /usr/games/minecraft && cd /usr/games/minecraft && echo "eula=true" > eula.txt
+wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+
+# To Run 
+
+cd /usr/games/minecraft && screen -S minecraft -d -m java -jar -Xms512M -Xmx2048M spigot-1.16.3.jar nogui
+
+# Setup Systemd
+
+touch /etc/systemd/system/minecraft.service
+chmod +x /etc/systemd/system/minecraft.service
+
+```
 [Unit]
 Description=Start Minecraft
-After=network.target
+After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=/home/pi/minecraft/start.sh
+RemainAfterExit=yes
+WorkingDirectory=/usr/games/minecraft
+ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx2048M spigot-1.16.3.jar nogui
 TimeoutStartSec=0
 
 [Install]
 WantedBy=multi-user.target
+```
 
-cat /etc/systemd/system/minecraft-proxy.service
-[Unit]
-Description=Reverse SSH connection
-After=network.target
-
-[Service]
-Type=simple
-ExecStart=ssh -vvv -N -o "ServerAliveInterval 10" -o "ExitOnForwardFailure yes" -R 25565:localhost:25565 root@IP-ADDRESS
-Restart=always
-RestartSec=5s
-
-[Install]
-WantedBy=default.target
+systemctl daemon-reload
+systemctl enable minecraft.service
