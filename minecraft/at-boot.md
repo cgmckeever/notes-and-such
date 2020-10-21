@@ -35,3 +35,10 @@ WantedBy=multi-user.target
 
 systemctl daemon-reload
 systemctl enable minecraft.service
+
+# Resources
+
+- [AWS](https://aws.amazon.com/getting-started/hands-on/run-your-own-minecraft-server/)
+- [Quick Install](https://lemire.me/blog/2016/04/02/setting-up-a-robust-minecraft-server-on-a-raspberry-pi/)
+- [systemd-simple](https://fatmin.com/2018/01/29/linux-how-to-start-a-minecraft-server-at-boot-via-systemd/)
+- [systemd-advanced](https://teilgedanken.de/Blog/post/setting-up-a-minecraft-server-using-systemd/)
