@@ -1,0 +1,33 @@
+cat minecraft/start.sh
+#!/bin/bash
+
+#Standard Minecraft
+cd /home/pi/minecraft
+exec java -jar -Xms512M -Xmx2048M spigot-1.16.3.jar nogui
+
+cat /etc/systemd/system/minecraft.service
+[Unit]
+Description=Start Minecraft
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/home/pi/minecraft/start.sh
+TimeoutStartSec=0
+
+[Install]
+WantedBy=multi-user.target
+
+cat /etc/systemd/system/minecraft-proxy.service
+[Unit]
+Description=Reverse SSH connection
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=ssh -vvv -N -R 25565:localhost:25565 root@IP-ADDRESS
+Restart=always
+RestartSec=5s
+
+[Install]
+WantedBy=default.target
