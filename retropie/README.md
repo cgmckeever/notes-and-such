@@ -123,7 +123,7 @@ input_player1_mouse_index = "XXX"
 ## Emulation Station
 
 - ~/.emulationstation/es_input.cfg
-- [Not saving](https://retropie.org.uk/forum/topic/24483/es_input-cfg-wont-update-retroarch-autoconfigs-not-created-error-saving-manually/16)
+- [Configs Not saving](https://retropie.org.uk/forum/topic/24483/es_input-cfg-wont-update-retroarch-autoconfigs-not-created-error-saving-manually/16)
 
 ## [Joystick Select](https://github.com/meleu/RetroPie-joystick-selection)
 
@@ -135,10 +135,10 @@ These are older steps needed before the new X-Arcade encoder.
 
 - [Standard mapping for keyboard based profile for X-Arcade](https://blog.petrockblock.com/wp-content/uploads/2014/11/RP-Xcade-Mapping.pdf)
 - [Key Bindings](https://www.hanselman.com/blog/RetroPieAndXArcadeTankstickThePerfectRetroArcadePlusKeybindingsAndConfigAndHowto.aspx)
-- Newer adapaters make this simpler
 
 ### enable xarcade2jstick
 
+- In retroarch packages -> optional
 - if controller stops works, wipe emulation station controller configs (dumb)
 
 ### Advance Mame Trackball Tank Stick
@@ -233,9 +233,25 @@ input_pause_toggle_btn = num2
    </inputConfig>
 ```
 
-## Mayflash MegaDrive
+## NES Contoller
 
-### Retroarch
+- [Add saelect button](https://github.com/RetroPie/RetroPie-Setup/wiki/Nintendo-Entertainment-System)
+```
+Either Remap the select button
+
+In the NES RetroArch config file, /opt/retropie/configs/nes/retroarch.cfg, above the #include" line, add the following line:
+
+input_player1_select_btn = "x"
+where x is the button number you wish to remap the select button to.
+```
+
+## WIImote / Dolphin Bar
+
+- [Games List](https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38)
+
+### Mayflash MegaDrive
+
+#### Retroarch
 
 ```
 input_device = "Mayflash limited Mayflash MD USB Adapter"
@@ -261,22 +277,6 @@ input_x_btn = "4"
 input_menu_toggle_btn = "4"
 input_y_btn = "3"
 ```
-
-## NES Contoller
-
-- [Add saelect button](https://github.com/RetroPie/RetroPie-Setup/wiki/Nintendo-Entertainment-System)
-```
-Either Remap the select button
-
-In the NES RetroArch config file, /opt/retropie/configs/nes/retroarch.cfg, above the #include" line, add the following line:
-
-input_player1_select_btn = "x"
-where x is the button number you wish to remap the select button to.
-```
-
-## WIImote / Dolphin Bar
-
-- [Games List](https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38)
 
 ### Duck Hunt NES(topia)
 
