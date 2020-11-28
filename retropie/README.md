@@ -60,9 +60,7 @@ Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless
 ## Compudaze
 -- remove bezels in retroarch emulator config
 
-# Trackball
-
-- https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices
+# [Trackball]](https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices)
 
 ## Advance Mame
 
@@ -114,7 +112,7 @@ mame2003-mame_current_mouse_enable = "enabled"
 input_player1_mouse_index = "XXX"
 ```
 
-# [GamePads[(http://newwiki.arcadecontrols.com/arcade.htm)
+# [GamePads](http://newwiki.arcadecontrols.com/arcade.htm)
 
 ## Test
 
@@ -292,18 +290,19 @@ Edit1: Guys, a few minutes after posting this comment, I found a solution ... go
 As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
 ```
 
-## XBOXDRV for Analog deadzones
+## [XBOXDRV for Analog deadzones](https://retropie.org.uk/docs/Universal-Controller-Calibration-%26-Mapping-Using-xboxdrv/)
 
 If an analog needs to be overwritten to allow better deadzone
 
-### GRS Flight Yoke
-
-#### [Testing](https://retropie.org.uk/docs/Universal-Controller-Calibration-%26-Mapping-Using-xboxdrv/)
+### Testing
 
 - List devices `cat /proc/bus/input/devices`
 - List events `ls /dev/input/by-id/`
 - Show events `evtest /dev/input/event[•]`
 - Kill xboxdrv `sudo killall xboxdrv`
+
+
+### GRS Flight Yoke
 
 ```
 sudo /opt/retropie/supplementary/xboxdrv/bin/xboxdrv \
