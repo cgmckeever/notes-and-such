@@ -60,7 +60,7 @@ Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless
 ## Compudaze
 -- remove bezels in retroarch emulator config
 
-# [Trackball]](https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices)
+# [Trackball](https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices)
 
 ## Advance Mame
 
