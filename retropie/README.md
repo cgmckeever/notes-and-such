@@ -246,13 +246,9 @@ input_player1_select_btn = "x"
 where x is the button number you wish to remap the select button to.
 ```
 
-## WIImote / Dolphin Bar
+## Mayflash MegaDrive
 
-- [Games List](https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38)
-
-### Mayflash MegaDrive
-
-#### Retroarch
+### Retroarch
 
 ```
 input_device = "Mayflash limited Mayflash MD USB Adapter"
@@ -278,6 +274,10 @@ input_x_btn = "4"
 input_menu_toggle_btn = "4"
 input_y_btn = "3"
 ```
+
+## WIImote / Dolphin Bar
+
+- [Games List](https://retropie.org.uk/forum/topic/10984/wii-remote-for-use-a-gun/38)
 
 ### Duck Hunt NES(topia)
 
