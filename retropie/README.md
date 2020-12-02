@@ -309,7 +309,7 @@ If an analog needs to be overwritten to allow better deadzone
 
 #### Star Wars
 
-Trouble getting it to be recognized as an analog controller
+[Trouble getting it to be recognized as an analog controller](https://retropie.org.uk/forum/topic/28665/mame-deadzone-with-analog-controller/16)
 
 From the `Input (this game)`
 
