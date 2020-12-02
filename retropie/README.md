@@ -6,7 +6,8 @@
 ### VI
 
 - sudo apt-get update && sudo apt-get -y install vim
-- :set cpoptions+=x
+- leave cursor after search `:set cpoptions+=x`
+- diable visual mode `:set mouse-=a`
 
 
 ## Resolution
@@ -294,6 +295,8 @@ As an aside to anyone looking to change game modes in the mean time, gamepad sel
 
 If an analog needs to be overwritten to allow better deadzone
 
+- https://retropie.org.uk/forum/topic/7125/solved-deadzone-options-for-usb-controllers/2
+
 ### Testing
 
 - List devices `cat /proc/bus/input/devices`
@@ -304,18 +307,17 @@ If an analog needs to be overwritten to allow better deadzone
 
 ### GRS Flight Yoke
 
+#### Star Wars
+
+Trouble getting it to be recognized as an analog controller
+
+From the `Input (this game)`
+
+- remove all reference to `Pedal` config
+
+Update `advmame-1.4.rc` to include:
+
 ```
-sudo /opt/retropie/supplementary/xboxdrv/bin/xboxdrv \
-    --evdev /dev/input/by-id/usb-Baolian_industry_Co.__Ltd._BL_flight_yoke_#1_8D6D17A65548-event-joystick \
-    --silent \
-    --detach-kernel-driver \
-    --force-feedback \
-    --deadzone-trigger 0% \
-    --deadzone 0% \
-    --mimic-xpad \
-    --evdev-absmap ABS_X=x1,ABS_Y=y1 \
-    --evdev-keymap BTN_TRIGGER=a,BTN_THUMB=b,BTN_THUMB2=x,BTN_TOP=y \
-    --ui-axismap x2=void,y2=void,lt=void,rt=void \
-    --ui-buttonmap lb=void,rb=void,tl=void,tr=void,guide=void,back=void,start=void \
-    &
+input_map[p1_stickx] joystick[3,stick,x]
+input_map[p1_sticky] joystick[3,stick,y]
 ```
