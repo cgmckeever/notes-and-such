@@ -217,6 +217,9 @@ input_pause_toggle_btn = num2
 ## DragonRise USB ENCODER
 
 ### ES Config
+
+- /opt/retropie/configs/all/emulationstation/es_input.cfg
+
 ```
  <inputConfig type="joystick" deviceName="DragonRise Inc.   Generic   USB  Joystick  " deviceGUID="03000000790000000600000010010000">
     <input name="a" type="button" id="1" value="1" />
@@ -244,6 +247,9 @@ input_pause_toggle_btn = num2
 - https://github.com/libretro/retroarch-joypad-autoconfig/blob/master/udev/Tomee_NES_to_USB_Adapter.cfg
 
 ### ES Config
+
+- /opt/retropie/configs/all/emulationstation/es_input.cfg
+
 ```
   <inputConfig type="joystick" deviceName=" NES PC Game Pad     NES PC Game Pad   " deviceGUID="03000000571d00002100000010010000">
      <input name="a" type="button" id="0" value="1" />
