@@ -1,6 +1,39 @@
 # Setup
 - https://github.com/RetroPie/RetroPie-Setup/wiki/First-Installation
 
+## Headless
+
+### Wifi
+
+- `touch ssh`
+- `touch wpa_supplicant.conf`
+
+```
+ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
+update_config=1
+country=US
+
+network={
+    ssid="YOUR_SSID"
+    psk="YOUR_WIFI_PASSWORD"
+    key_mgmt=WPA-PSK
+}
+```
+
+### Video
+
+- https://elinux.org/RPiconfig
+
+### Audio
+
+
+- Fixing static `/boot/config.txt`
+
+```
+audio_pwm_mode=2
+```
+
+
 ## Addtional Installs
 
 ### VI
@@ -15,19 +48,10 @@
 - sudo raspi-config
 - Go to: >Advanced Option > Resolution >
 
-## Audio
-
-- Fixing static `/boot/config.txt`
-
-```
-audio_pwm_mode=2
-````
-
 ## WIFI
 
 - rfkill list wlan
 - sudo rfkill unblock all
-
 
 ## Bluetooth
 
