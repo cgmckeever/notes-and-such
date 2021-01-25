@@ -1,4 +1,8 @@
-alias resource='source ~/.bashrc'
+## Mac zsh
+export BASH_SILENCE_DEPRECATION_WARNING=1
+export TF_VAR_rd_public_key_file=~/.ssh/id_rsa.pub
+## GPG signing
+export GPG_TTY=`tty`
 
 # GO
 export GOPATH=$HOME/go
@@ -6,6 +10,17 @@ export PATH=$PATH:$GOPATH/bin
 export GOROOT=/usr/local/opt/go/libexec
 export PATH=$PATH:$GOROOT/bin
 export GOSUMDB=off
+
+alias resource='source ~/.bashrc'
+alias dockerwipe='docker rmi -f $(docker images -a -q) && docker system prune -a'
+
+alias ecr-gov="aws ecr get-login-password --region us-gov-west-1 \
+    --profile=gov-root | docker login --username AWS \
+    --password-stdin 045710658753.dkr.ecr.us-gov-west-1.amazonaws.com"
+
+alias ecr-aws="aws ecr get-login-password \
+    --region us-east-1 | docker login --username AWS \
+    --password-stdin 230579579650.dkr.ecr.us-east-1.amazonaws.com"
 
 GRAY='\[\033[1;30m\]'
 RED='\[\033[1;31m\]'
@@ -17,6 +32,8 @@ BLUE='\[\033[1;34m\]'
 CYAN='\[\033[1;36m\]'
 NC='\[\033[0m\]'
 
+
+export PATH="/usr/local/opt/terraform@0.13/bin:$PATH"
 
 # BREW (is this needed)
 if [ -f `brew --prefix`/etc/bash_completion ]; then
@@ -77,3 +94,96 @@ prompt_command() {
 
 export PROMPT=$PS1
 PROMPT_COMMAND=prompt_command
+
+
+rd-env-show() {
+    env | grep -Ee '^(AWS_|RD_)'
+    return 0
+}
+
+aws_settoken() {
+    # Clear any current token info
+    aws_unsettoken
+
+    # Specify AWS profile to get credentials from
+    local profile
+    if [ "${AWS_PROFILE}x" = "x" ]
+    then
+        unset opt OPTARG OPTIND
+        local option
+        profile="unset"
+        while getopts ':p:' option
+        do
+            case "${option}" in
+                p)
+                    echo "Setting profile to: ${OPTARG}"
+                    profile="${OPTARG}"
+                    ;;
+            esac
+        done
+        shift "$((${OPTIND} -1))"
+    else
+        profile="${AWS_PROFILE}"
+    fi
+
+    if [ "${profile}" = "unset" ]
+    then
+        echo "ERROR: AWS_PROFILE is not defined and no -p option was set"
+        echo ""
+        echo "Usage:"
+        echo "aws_settoken -p PROFILE_NAME"
+        echo ""
+        echo "-p    The AWS profile to get credentials for. May be omitted if AWS_PROFILE is set"
+        return 1
+    fi
+    echo "Using AWS Profile: ${profile}"
+
+    local assume_role_var
+    local profile_transformed
+    local region_var
+    local sts_response_json
+    local sts_session_name
+
+    sts_session_name="docker_run_$(date +%s_%N)"
+
+    profile_transformed=$(echo ${profile} | sed -e 's#[ -]#_#g')
+    assume_role_var="profile_${profile_transformed}_role_arn"
+    region_var="profile_${profile_transformed}_region"
+
+    ## Main
+    while read -r fileline
+    do
+        # Skip comments
+        if [[ $fileline =~ ^# ]] || [[ $fileline =~ ^\; ]]
+        then
+            continue
+        fi
+
+        if [[ $fileline =~ ^\[.*]$ ]]
+        then
+            stringlength=${#fileline}
+            # [profile rd-staging] --> profile_rd_staging
+            # (drop the first and last char; replace spaces and hypens with underscores)
+            section=$(echo ${fileline:1:$stringlength-2} | sed -e 's#[ -]#_#g')
+        elif [[ $fileline ]]
+        then
+            # output = json --> profile_rd_staging_output=json
+            declare "${section}_${fileline%% =*}=${fileline##* = }"
+        fi
+    done < ~/.aws/config
+    sts_response_json=$(aws sts assume-role --role-arn ${!assume_role_var} --role-session-name ${sts_session_name} --region ${!region_var})
+
+    export AWS_ACCESS_KEY_ID="$(echo ${sts_response_json} | jq -r .Credentials.AccessKeyId)"
+    export AWS_DEFAULT_REGION="${!region_var}"
+    export AWS_REGION="${!region_var}"
+    export AWS_SECRET_ACCESS_KEY="$(echo ${sts_response_json} | jq -r .Credentials.SecretAccessKey)"
+    export AWS_SESSION_TOKEN="$(echo ${sts_response_json} | jq -r .Credentials.SessionToken)"
+}
+
+aws_unsettoken() {
+    unset AWS_ACCESS_KEY_ID
+    unset AWS_DEFAULT_REGION
+    unset AWS_REGION
+    unset AWS_SECRET_ACCESS_KEY
+    unset AWS_SESSION_TOKEN
+}
