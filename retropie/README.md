@@ -359,12 +359,11 @@ If an analog needs to be overwritten to allow better deadzone
 cd /tmp; \
 wget https://www.sindenlightgun.com/software/SindenLightgunSoftwareReleaseV1.05.zip; \
 unzip SindenLightgunSoftwareReleaseV1.05.zip; \
-cd SindenLightgunSoftwareReleaseV1.05; \
-cd SindenLightgunLinuxSoftwareV1.05/Pi-Arm; \
-mv Lightgun ~/Lightgun.1.05; \
+mv SindenLightgunSoftwareReleaseV1.05/SindenLightgunLinuxSoftwareV1.05/Pi-Arm/Lightgun ~/Lightgun.1.05; \
 rm -rf Sinden*; \
 cd ~/; \
-ln -s Lightgu; \
+ln -s Lightgun.1.05 Lightgun; \
+cd Lightgun; \
 chmod 755 *.sh; \
 ./setup-lightgun.sh; \
 ./setup-retropie.sh; \
