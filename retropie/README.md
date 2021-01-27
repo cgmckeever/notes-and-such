@@ -17,6 +17,7 @@ network={
     ssid="YOUR_SSID"
     psk="YOUR_WIFI_PASSWORD"
     key_mgmt=WPA-PSK
+    scan_ssid=1
 }
 ```
 
@@ -33,15 +34,22 @@ network={
 audio_pwm_mode=2
 ```
 
+# Addtional Installs
 
-## Addtional Installs
+## EVTEST
 
-### VI
+```
+sudo apt-get install evtest
+```
+
+## VI
 
 - sudo apt-get update && sudo apt-get -y install vim
 - leave cursor after search `:set cpoptions+=x`
 - diable visual mode `:set mouse-=a`
 
+
+# General Setup
 
 ## Resolution
 
@@ -66,11 +74,22 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 - extra: sudo apt-get install bluez
 - sudo busctl tree org.bluez
 
-# General Setup
+# RetroPi Setup
 
-## RetroArch
+## Files Cheatsheet
 
-- Log:  `/dev/shm/runcommand.log`
+### Roms
+- ~/RetroPie/roms/
+
+### Retroarch Configs
+- /opt/retropie/configs/
+
+### Game Overrides
+- /opt/retropie/configs/all/retroarch/config
+
+## RetroArch Log
+
+- `/dev/shm/runcommand.log`
 
 ## Remove Frame Rate
 
@@ -81,9 +100,6 @@ Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless
 # ROMS
 - https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
 - Arcade Punks
-
-## Compudaze
--- remove bezels in retroarch emulator config
 
 # [Trackball](https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices)
 
@@ -141,9 +157,17 @@ input_player1_mouse_index = "XXX"
 
 ## Test
 
-- cat /proc/bus/input/devices
+### jstest
+
 - ls /dev/input/js*
 - jstest /dev/input/js*
+
+### evtest
+
+- List devices `cat /proc/bus/input/devices`
+- List events `ls /dev/input/by-id/`
+- Show events `evtest /dev/input/event[•]`
+- Kill xboxdrv `sudo killall xboxdrv`
 
 ## Emulation Station
 
@@ -327,13 +351,34 @@ If an analog needs to be overwritten to allow better deadzone
 
 - https://retropie.org.uk/forum/topic/7125/solved-deadzone-options-for-usb-controllers/2
 
-### Testing
+## Sinden LightGun
 
-- List devices `cat /proc/bus/input/devices`
-- List events `ls /dev/input/by-id/`
-- Show events `evtest /dev/input/event[•]`
-- Kill xboxdrv `sudo killall xboxdrv`
+### Duck Hunt
 
+### Override
+- /opt/retropie/configs/all/retroarch/config/FCEUmm/'Duck Hunt (World).cfg'
+
+```
+input_player2_gun_trigger_mbtn = "1"
+```
+
+### Remap
+
+- Handled in the UI
+- vi /opt/retropie/configs/nes/FCEUmm/Duck\ Hunt\ \(World\).rmp
+
+```
+input_libretro_device_p1 = "1"
+input_libretro_device_p2 = "258"
+input_libretro_device_p3 = "1"
+input_libretro_device_p4 = "1"
+input_libretro_device_p5 = "1"
+input_player1_analog_dpad_mode = "1"
+input_player2_analog_dpad_mode = "1"
+input_player3_analog_dpad_mode = "1"
+input_player4_analog_dpad_mode = "1"
+input_player5_analog_dpad_mode = "0"
+```
 
 ### GRS Flight Yoke
 
