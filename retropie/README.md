@@ -79,13 +79,15 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 ## Files Cheatsheet
 
 ### Roms
-- ~/RetroPie/roms/
+- `~/RetroPie/roms/`
+- https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
+- Arcade Punks
 
 ### Retroarch Configs
-- /opt/retropie/configs/
+- `/opt/retropie/configs/`
 
 ### Game Overrides
-- /opt/retropie/configs/all/retroarch/config
+- `/opt/retropie/configs/all/retroarch/config`
 
 ## RetroArch Log
 
@@ -96,10 +98,6 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 ```
 Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless you have system / core / game overrides). In the GUI is under Onscreen Display > Onscreen Notifications > Display Frame Count.
 ```
-
-# ROMS
-- https://github.com/RetroPie/RetroPie-Setup/wiki/Running-ROMs-from-a-USB-drive
-- Arcade Punks
 
 # [Trackball](https://github.com/RetroPie/RetroPie-Setup/wiki/Spinners,-Trackballs,-Lightguns,-and-other-Mouse-Devices)
 
@@ -352,6 +350,8 @@ If an analog needs to be overwritten to allow better deadzone
 - https://retropie.org.uk/forum/topic/7125/solved-deadzone-options-for-usb-controllers/2
 
 ## Sinden LightGun
+
+- [Testing Steps](https://gist.github.com/cgmckeever/6e6bb861239cd8864298755d60d273b1)
 
 ### Duck Hunt
 
