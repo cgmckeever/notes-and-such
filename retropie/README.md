@@ -362,6 +362,7 @@ unzip SindenLightgunSoftwareReleaseV1.05.zip; \
 cd SindenLightgunSoftwareReleaseV1.05; \
 cd SindenLightgunLinuxSoftwareV1.05/Pi-Arm; \
 mv Lightgun ~/Lightgun.1.05; \
+rm -rf Sinden*; \
 cd ~/; \
 ln -s Lightgu; \
 chmod 755 *.sh; \
