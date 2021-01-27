@@ -355,14 +355,14 @@ If an analog needs to be overwritten to allow better deadzone
 
 ### Duck Hunt
 
-### Override
+#### Override
 - /opt/retropie/configs/all/retroarch/config/FCEUmm/'Duck Hunt (World).cfg'
 
 ```
 input_player2_gun_trigger_mbtn = "1"
 ```
 
-### Remap
+#### Remap
 
 - Handled in the UI
 - vi /opt/retropie/configs/nes/FCEUmm/Duck\ Hunt\ \(World\).rmp
