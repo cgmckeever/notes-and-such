@@ -353,6 +353,22 @@ If an analog needs to be overwritten to allow better deadzone
 
 - [Testing Steps](https://gist.github.com/cgmckeever/6e6bb861239cd8864298755d60d273b1)
 
+### Setup
+
+```
+cd /tmp; \
+wget https://www.sindenlightgun.com/software/SindenLightgunSoftwareReleaseV1.05.zip; \
+unzip SindenLightgunSoftwareReleaseV1.05.zip; \
+cd SindenLightgunSoftwareReleaseV1.05; \
+cd SindenLightgunLinuxSoftwareV1.05/Pi-Arm; \
+mv Lightgun ~/Lightgun.1.05; \
+cd ~/; \
+ln -s Lightgu; \
+chmod 755 *.sh; \
+./setup-lightgun.sh; \
+./setup-retropie.sh; \
+```
+
 ### Duck Hunt
 
 #### Override
