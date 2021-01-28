@@ -288,6 +288,10 @@ input_pause_toggle_btn = num2
 
 ## NES Contoller
 
+- [remap hot key](https://retropie.org.uk/forum/topic/16915/retroarch-light-gun-game-mode-selection/14)
+ ```
+ As an aside to anyone looking to change game modes in the mean time, gamepad selection is possible as long as the NES 'Select' button is mapped, or remapped away from the RetroArch hotkey.
+ ```
 - [Add saelect button](https://github.com/RetroPie/RetroPie-Setup/wiki/Nintendo-Entertainment-System)
 ```
 Either Remap the select button
@@ -375,7 +379,23 @@ chmod 755 *.sh; \
 - /opt/retropie/configs/all/retroarch/config/FCEUmm/'Duck Hunt (World).cfg'
 
 ```
+aspect_ratio_index = "22"
+input_overlay = "~/.config/retroarch/overlay/SindenBorderWhiteMedium_Wide.cfg"
+menu_show_advanced_settings = "true"
+
+input_player1_select_mbtn = "2"
 input_player2_gun_trigger_mbtn = "1"
+
+#input_player2_gun_aux_a_mbtn = "2"
+#input_player2_gun_aux_b_mbtn = "3"
+
+#input_player2_gun_start = "num1"
+#input_player2_gun_select = "alt"
+
+#input_player2_gun_dpad_up = "up"
+#input_player2_gun_dpad_down = "down"
+#input_player2_gun_dpad_left = "left"
+#input_player2_gun_dpad_right = "right"
 ```
 
 #### Remap
