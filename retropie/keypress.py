@@ -27,7 +27,7 @@ elif arg == 'select':
     time.sleep(0.2)
     device.emit(uinput.KEY_LEFTSHIFT, 0)
 elif arg == 'exit':
-    print('SHIFT/ESCAPE press')
+    print('BACKSLASH/ENTER press')
     device = create_input(0.2)
     device.emit(uinput.KEY_BACKSLASH, 1)
     device.emit(uinput.KEY_ENTER, 1)
