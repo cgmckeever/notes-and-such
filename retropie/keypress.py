@@ -5,7 +5,13 @@ import sys
 import time
 
 def create_input(sleep):
-   device = uinput.Device([uinput.KEY_A, uinput.KEY_BACKSLASH, uinput.KEY_ENTER, uinput.KEY_LEFTSHIFT, uinput.KEY_ESC])
+   device = uinput.Device([
+      uinput.KEY_A,
+      uinput.KEY_BACKSLASH,
+      uinput.KEY_ENTER,
+      uinput.KEY_LEFTSHIFT,
+      uinput.KEY_ESC
+    ])
 
    # 1 = press; 0 = release
    # device.emit(uinput.KEY_ENTER, 1)
