@@ -29,9 +29,9 @@ if arg == 'start':
 elif arg == 'select':
     print('SELECT press')
     device = create_input(0.2);
-    device.emit(uinput.KEY_LEFTSHIFT, 1)
+    device.emit(uinput.KEY_BACKSLASH, 1)
     time.sleep(0.2)
-    device.emit(uinput.KEY_LEFTSHIFT, 0)
+    device.emit(uinput.KEY_BACKSLASH, 0)
 elif arg == 'exit':
     ## This much match whatever the
     ## emulator/retroarch is expecting
