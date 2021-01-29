@@ -37,7 +37,7 @@ elif arg == 'exit':
     device = create_input(0.2)
     device.emit(uinput.KEY_BACKSLASH, 1)
     device.emit(uinput.KEY_ENTER, 1)
-    time.sleep(0.1)
+    time.sleep(0.3)
     device.emit(uinput.KEY_BACKSLASH, 0)
     device.emit(uinput.KEY_ENTER, 0)
 elif arg == 'a':
