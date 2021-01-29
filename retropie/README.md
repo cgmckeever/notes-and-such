@@ -56,16 +56,51 @@ sudo apt-get install joystick
 
 ## JSINPUT
 
-- sudo modprobe uinput
-- sudo pip install python-uinput
-- sudo vi /etc/module
-- add .jsliten to `~/ `and `ln -s` to root
+### Config
 
 ```
-uinput
+cd ~/
+wget https://raw.githubusercontent.com/cgmckeever/notes-and-such/master/retropie/.jslisten
+sudo ln -s .jslisten /root/
 ```
 
--- debug `cat /var/log/messages`
+### Install
+
+```
+sudo pip install python-uinput
+cd /tmp
+git clone https://github.com/cgmckeever/jslisten.git
+make
+sudo mkdir /opt/bin; cp /bin/jslisten /opt/bin
+sudo cp utils/jslisten.service" /etc/systemd/system
+
+## add --device /dev/input/jsX
+sudo vi /etc/systemd/system
+
+sudo systemctl daemon-reload
+sudo systemctl start jslisten.service
+sudp systemctl enable jslisten
+```
+
+### Scripts
+
+```
+cd ~/scripts
+wget https://raw.githubusercontent.com/cgmckeever/notes-and-such/master/retropie/keypress.py
+wget https://raw.githubusercontent.com/cgmckeever/notes-and-such/master/retropie/listen.sh
+chmod 755 listen.sh
+```
+
+### add `uinput` to module load
+
+```
+sudo vi /etc/module
+```
+
+### Debug
+
+- `-- debug`
+- `cat /var/log/messages`
 
 # General Setup
 

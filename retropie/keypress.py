@@ -33,6 +33,8 @@ elif arg == 'select':
     time.sleep(0.2)
     device.emit(uinput.KEY_LEFTSHIFT, 0)
 elif arg == 'exit':
+    ## This much match whatever the
+    ## emulator/retroarch is expecting
     print('BACKSLASH/ENTER press')
     device = create_input(0.2)
     device.emit(uinput.KEY_BACKSLASH, 1)
