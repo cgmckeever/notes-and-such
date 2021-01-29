@@ -42,11 +42,22 @@ audio_pwm_mode=2
 sudo apt-get install evtest
 ```
 
+## JSTEST
+
+```
+sudo apt-get install joystick
+```
+
 ## VI
 
 - sudo apt-get update && sudo apt-get -y install vim
 - leave cursor after search `:set cpoptions+=x`
 - diable visual mode `:set mouse-=a`
+
+## JSINPUT
+
+- sudo modprobe uinput
+- sudo pip install python-uinput
 
 
 # General Setup

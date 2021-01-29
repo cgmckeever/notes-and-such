@@ -22,7 +22,7 @@ elif arg == 'select':
     device = create_input(0.2);
     device.emit(uinput.KEY_LEFTSHIFT, 1)
     time.sleep(0.2)
-    device.emit(uinput.KEY_LEFTSHIFT, 0) 
+    device.emit(uinput.KEY_LEFTSHIFT, 0)
 elif arg == 'exit':
     print('SHIFT/ESCAPE press')
     device = create_input(0.2)
