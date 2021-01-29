@@ -58,6 +58,11 @@ sudo apt-get install joystick
 
 - sudo modprobe uinput
 - sudo pip install python-uinput
+- sudo vi /etc/module
+
+```
+uinput
+```
 
 
 # General Setup
