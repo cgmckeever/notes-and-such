@@ -5,7 +5,15 @@ import sys
 import time
 
 def create_input(sleep):
-   device = uinput.Device([uinput.KEY_A, uinput.KEY_ENTER, uinput.KEY_LEFTSHIFT, uinput.KEY_ESC])
+   device = uinput.Device([
+      uinput.KEY_A,
+      uinput.KEY_BACKSLASH,
+      uinput.KEY_ENTER,
+      uinput.KEY_LEFTSHIFT,
+      uinput.KEY_ESC
+      ])
+   # 1 = press; 0 = release
+   # device.emit(uinput.KEY_ENTER, 1)
    time.sleep(sleep)
    return device
 
@@ -26,11 +34,11 @@ elif arg == 'select':
 elif arg == 'exit':
     print('SHIFT/ESCAPE press')
     device = create_input(0.2)
-    device.emit(uinput.KEY_LEFTSHIFT, 1)
-    device.emit(uinput.KEY_ESC, 1)
+    device.emit(uinput.KEY_BACKSLASH, 1)
+    device.emit(uinput.KEY_ENTER, 1)
     time.sleep(0.1)
-    device.emit(uinput.KEY_LEFTSHIFT, 0)
-    device.emit(uinput.KEY_ESC, 0)
+    device.emit(uinput.KEY_BACKSLASH, 0)
+    device.emit(uinput.KEY_ENTER, 0)
 elif arg == 'a':
    print('A press')
    device = create_input(0.3);
