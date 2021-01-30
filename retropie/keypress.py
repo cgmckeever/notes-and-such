@@ -42,6 +42,12 @@ elif arg == 'exit':
     time.sleep(0.5)
     device.emit(uinput.KEY_BACKSLASH, 0)
     device.emit(uinput.KEY_ENTER, 0)
+    device.emit(uinput.KEY_BACKSLASH, 1)
+    device.emit(uinput.KEY_ENTER, 1)
+    time.sleep(0.5)
+    device.emit(uinput.KEY_BACKSLASH, 0)
+    device.emit(uinput.KEY_ENTER, 0)
+    print('BACKSLASH/ENTER release')
 elif arg == 'a':
    print('A press')
    device = create_input(0.3);
