@@ -146,7 +146,12 @@ https://www.cnet.com/how-to/how-to-setup-bluetooth-on-a-raspberry-pi-3/
 
 - `/dev/shm/runcommand.log`
 
-## Remove Frame Rate
+## Mame Configs
+
+- `~/RetroPie/roms/arcade/MAMEVERSION/cfg`
+- `default.cfg` should be the default for the mame version, and should be able to be deleted if things go wrong
+
+### Remove Frame Rate
 
 ```
 Set framecount_show = "false" in /opt/retropie/configs/all/retroarch.cfg (unless you have system / core / game overrides). In the GUI is under Onscreen Display > Onscreen Notifications > Display Frame Count.
