@@ -1,7 +1,9 @@
 # Prereqs
 
+```
 apt -y update && apt -y install default-jre screen git
 apt install default-jdk
+```
 
 # Install
 
@@ -14,8 +16,10 @@ cd /usr/games/minecraft && screen -S minecraft -d -m java -jar -Xms512M -Xmx2048
 
 # Setup Systemd
 
+```
 touch /etc/systemd/system/minecraft.service
 chmod +x /etc/systemd/system/minecraft.service
+```
 
 ```
 [Unit]
@@ -33,8 +37,10 @@ TimeoutStartSec=0
 WantedBy=multi-user.target
 ```
 
+```
 systemctl daemon-reload
 systemctl enable minecraft.service
+```
 
 # Resources
 
