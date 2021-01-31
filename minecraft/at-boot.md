@@ -7,8 +7,10 @@ apt install default-jdk
 
 # Install
 
+```
 mkdir /usr/games/minecraft && cd /usr/games/minecraft && echo "eula=true" > eula.txt
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
+```
 
 # To Run 
 
