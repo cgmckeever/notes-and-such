@@ -56,9 +56,9 @@ systemctl enable minecraft.service
 - https://github.com/nicolaschan/minecraft-backup
 
 ```
-mkdir -p /backups/world
-mkdir -p /backups/world_nether
-mkdir -p /backups/world_the_end
+mkdir -p ~/backups/world
+mkdir -p ~/backups/world_nether
+mkdir -p ~/backups/world_the_end
 
 ```
 
