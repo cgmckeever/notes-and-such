@@ -59,7 +59,6 @@ systemctl enable minecraft.service
 mkdir -p ~/backups/world
 mkdir -p ~/backups/world_nether
 mkdir -p ~/backups/world_the_end
-
 ```
 
 ```
