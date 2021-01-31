@@ -33,7 +33,7 @@ After=network-online.target
 Type=simple
 RemainAfterExit=yes
 WorkingDirectory=/usr/games/minecraft
-ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx2048M spigot-1.16.3.jar nogui
+ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx2048M spigot.latest.jar nogui
 TimeoutStartSec=0
 
 [Install]
