@@ -442,7 +442,6 @@ input_overlay = "~/.config/retroarch/overlay/SindenBorderWhiteMedium_Wide.cfg"
 menu_show_advanced_settings = "true"
 
 input_player1_select_mbtn = "2"
-input_player1_start_mbtn = "1"
 input_player2_gun_trigger_mbtn = "1"
 
 #input_player2_gun_aux_a_mbtn = "2"
