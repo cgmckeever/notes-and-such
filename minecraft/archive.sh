@@ -19,7 +19,7 @@ for world in world world_nether world_the_end; do
     rm -rf $backup_path/$world/*.tar*
 done
 
-cd $backup_path
+cd /tmp
 tar -czvf $backup.tar.gz $backup
 
-ls -la /tmp
+ls -la
