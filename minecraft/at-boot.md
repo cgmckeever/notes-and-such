@@ -67,6 +67,7 @@ systemctl stop minecraft.service
 ```
 loginctl enable-linger miner
 cp /etc/systemd/system/minecraft.service  /home/miner/.config/systemd/user/minecraft.service
+chown miner.miner /home/miner/.config/systemd/user/minecraft.service
 ```
 
 ```
