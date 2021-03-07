@@ -77,7 +77,7 @@ cat ~/.bashrc
 ```
 
 ```
-systemctl daemon-reload
+systemctl --user daemon-reload
 systemctl --user enable minecraft.service
 systemctl --user start minecraft.service
 ```
