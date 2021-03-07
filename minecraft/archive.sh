@@ -14,8 +14,8 @@ for world in world world_nether world_the_end; do
     cp $backups/$world/$file $backup_path/$world
 
     cd $backup_path/$world/
-    tar -xvf $backup_path/$world/$file
-    rm -rf $backup_path/$world/$file
+    tar -xvf $file
+    rm -rf $file
 done
 
 cd /tmp
