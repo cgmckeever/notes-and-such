@@ -90,7 +90,7 @@ systemctl --user start minecraft.service
 - [systemd-simple](https://fatmin.com/2018/01/29/linux-how-to-start-a-minecraft-server-at-boot-via-systemd/)
 - [systemd-advanced](https://teilgedanken.de/Blog/post/setting-up-a-minecraft-server-using-systemd/)
 
-## Backups 
+# Backups 
 - https://github.com/nicolaschan/minecraft-backup
 
 ## Usage
@@ -116,7 +116,7 @@ crontab -e
 0 */2 * * * /home/miner/backups/world.sh
 ```
 
-### Restore
+## Restore
 
 ```
 cd /usr/games/minecraft; \
