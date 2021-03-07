@@ -19,7 +19,9 @@ for world in world world_nether world_the_end; do
 done
 
 cd /tmp
-tar -czvf $backup.tar.gz $backup
+archive=$backup.tar.gz
+tar -czvf $archive $backup
 rm $backup
 
 ls -la
+echo "Archive: /tmp/$archive"
