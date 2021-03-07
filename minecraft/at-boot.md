@@ -71,6 +71,7 @@ cat ~/.bash_profile
 ```
 
 ```
+systemctl daemon-reload
 systemctl --user enable minecraft.service
 systemctl --user start minecraft.service
 ```
@@ -94,6 +95,10 @@ mkdir -p ~/backups/world_the_end
 
 ```
 ./backup.sh -c -i /usr/games/minecraft/world -o ~/backups -m 30 -s minecraft
+```
+
+```
+crontab -e
 0 */2 * * * /home/miner/backups/world.sh
 ```
 
