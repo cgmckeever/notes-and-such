@@ -65,9 +65,9 @@ cp /etc/systemd/system/minecraft.service  /home/miner/.config/systemd/user/minec
 ```
 
 ```
-echo export XDG_RUNTIME_DIR="/run/user/$UID" > ~/.bash_profile; \
-echo export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus" >> ~/.bash_profile; \
-cat ~/.bash_profile
+echo export XDG_RUNTIME_DIR="/run/user/$UID" >> ~/.bashrc; \
+echo export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus" >> ~/.bashrc; \
+cat ~/.bashrc
 ```
 
 ```
