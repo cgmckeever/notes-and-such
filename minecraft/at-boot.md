@@ -2,10 +2,15 @@
 
 ```
 apt -y update && apt -y install default-jre screen git
-apt install default-jdk
+apt install default-jdk vim
 ```
 
 # Install
+
+```
+useradd -m miner; usermod --shell /bin/bash miner
+mkdir -p /usr/games/minecraft && chown miner.miner /usr/games/minecraft
+```
 
 ```
 mkdir /usr/games/minecraft && cd /usr/games/minecraft && echo "eula=true" > eula.txt
@@ -13,15 +18,18 @@ wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifac
 java -jar BuildTools.jar
 ```
 
+- ln -s current jar to to spigot.latest.jar
+
 # To Run 
 
+```
 cd /usr/games/minecraft && screen -S minecraft -d -m java -jar -Xms512M -Xmx2048M spigot.latest.jar nogui
+```
 
 # Setup Systemd
 
 ```
 touch /etc/systemd/system/minecraft.service
-chmod +x /etc/systemd/system/minecraft.service
 ```
 
 ```
@@ -30,6 +38,7 @@ Description=Start Minecraft
 After=network-online.target
 
 [Service]
+User=miner
 Type=simple
 RemainAfterExit=yes
 WorkingDirectory=/usr/games/minecraft
@@ -43,6 +52,9 @@ WantedBy=multi-user.target
 ```
 systemctl daemon-reload
 systemctl enable minecraft.service
+
+systemctl start minecraft.service
+systemctl stop minecraft.service
 ```
 
 # Resources
@@ -64,4 +76,26 @@ mkdir -p ~/backups/world_the_end
 ```
 ./backup.sh -c -i /usr/games/minecraft/world -o ~/backups -m 30 -s minecraft
 0 */2 * * * /root/backups/world.sh
+```
+
+### Restore
+
+```
+cd /usr/games/minecraft; \
+mv world world.install; \
+mv world_nether world_nether.install; \
+mv world_the_end world_the_end.install
+```
+
+```
+cd /tmp
+
+mkdir world; mv *world.* world/
+cd world; tar -xvf *; rm *.tar*; cd ..; mv world /usr/games/minecraft; ls
+
+mkdir world_nether; mv *world_nether.* world_nether/
+cd world_nether; tar -xvf *; rm *.tar*; cd ..; mv world_nether /usr/games/minecraft; ls
+
+mkdir world_the_end; mv *world_the_end.* world_the_end/
+cd world_the_end; tar -xvf *; rm *.tar*; cd ..; mv world_the_end /usr/games/minecraft; ls
 ```
