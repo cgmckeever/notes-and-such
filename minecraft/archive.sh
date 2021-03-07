@@ -15,7 +15,7 @@ for world in world world_nether world_the_end; do
 
     cd $backup_path/$world/
     tar -xvf $backup_path/$world/*
-    rm -rf $backup_path/$world/*.tar*
+    rm -rf $backup_path/$world/$file
 done
 
 cd /tmp
