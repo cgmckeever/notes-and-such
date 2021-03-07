@@ -39,7 +39,8 @@ Description=Start Minecraft
 After=network-online.target
 
 [Service]
-User=miner
+## As system
+#User=miner
 Type=simple
 RemainAfterExit=yes
 WorkingDirectory=/usr/games/minecraft
@@ -47,7 +48,10 @@ ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx4096M spigot.latest.
 TimeoutStartSec=0
 
 [Install]
-WantedBy=multi-user.target
+## As user
+# WantedBy=default.target
+## As system
+#WantedBy=multi-user.target
 ```
 
 ```
