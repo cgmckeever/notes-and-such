@@ -13,7 +13,8 @@ mkdir -p /usr/games/minecraft && chown miner.miner /usr/games/minecraft
 ```
 
 ```
-mkdir /usr/games/minecraft && cd /usr/games/minecraft && echo "eula=true" > eula.txt
+su - miner
+cd /usr/games/minecraft && echo "eula=true" > eula.txt
 wget https://hub.spigotmc.org/jenkins/job/BuildTools/lastSuccessfulBuild/artifact/target/BuildTools.jar
 java -jar BuildTools.jar
 ```
@@ -65,6 +66,7 @@ cp /etc/systemd/system/minecraft.service  /home/miner/.config/systemd/user/minec
 ```
 
 ```
+su - miner
 echo export XDG_RUNTIME_DIR="/run/user/$UID" >> ~/.bashrc; \
 echo export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus" >> ~/.bashrc; \
 cat ~/.bashrc
@@ -87,14 +89,23 @@ systemctl --user start minecraft.service
 ## Backups 
 - https://github.com/nicolaschan/minecraft-backup
 
-```
-mkdir -p ~/backups/world
-mkdir -p ~/backups/world_nether
-mkdir -p ~/backups/world_the_end
-```
+## Usage
 
 ```
 ./backup.sh -c -i /usr/games/minecraft/world -o ~/backups -m 30 -s minecraft
+```
+
+## Cron
+
+```
+su - miner
+mkdir -p ~/backups/world
+mkdir -p ~/backups/world_nether
+mkdir -p ~/backups/world_the_end
+
+cp minecraft-backup/backup.sh backups/
+touch backups/worlds.sh; chmod 755 backups/worlds.sh
+
 ```
 
 ```
