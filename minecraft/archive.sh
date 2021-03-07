@@ -7,7 +7,6 @@ backup=minecraft-$curdate-backup
 backup_path=/tmp/$backup
 
 rm -rf $backup_path
-mkdir -p $backup_path
 
 for world in world world_nether world_the_end; do
     mkdir $backup_path/$world
