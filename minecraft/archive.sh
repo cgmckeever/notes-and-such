@@ -20,5 +20,6 @@ done
 
 cd /tmp
 tar -czvf $backup.tar.gz $backup
+rm $backup
 
 ls -la
