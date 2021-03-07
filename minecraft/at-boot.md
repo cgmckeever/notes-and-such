@@ -137,3 +137,28 @@ cd world_nether; tar -xvf *; rm *.tar*; cd ..; mv world_nether /usr/games/minecr
 mkdir world_the_end; mv *world_the_end.* world_the_end/
 cd world_the_end; tar -xvf *; rm *.tar*; cd ..; mv world_the_end /usr/games/minecraft; ls
 ```
+
+# IPTABLES
+
+```
+apt-get install iptables-persistent
+```
+
+```
+iptables -S
+iptables-save
+```
+
+
+```
+iptables -N LOGGING
+iptables -A INPUT -i eth0 -p tcp --dport 25 -j LOGGING
+iptables -A OUTPUT -o eth0 -p tcp --dport 25 -j LOGGING
+iptables -A LOGGING -m limit --limit 2/min -j LOG --log-prefix "IPTables-Dropped: " --log-level 7
+iptables -A LOGGING -j DROP
+```
+
+```
+sudo netfilter-persistent save
+sudo netfilter-persistent reload
+```
