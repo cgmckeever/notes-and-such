@@ -42,7 +42,7 @@ User=miner
 Type=simple
 RemainAfterExit=yes
 WorkingDirectory=/usr/games/minecraft
-ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx2048M spigot.latest.jar nogui
+ExecStart=screen -S minecraft -d -m java -jar -Xms1024M -Xmx4096M spigot.latest.jar nogui
 TimeoutStartSec=0
 
 [Install]
@@ -56,6 +56,23 @@ systemctl enable minecraft.service
 systemctl start minecraft.service
 systemctl stop minecraft.service
 ```
+
+```
+
+## As User
+
+```
+export XDG_RUNTIME_DIR="/run/user/$UID"
+export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
+
+cp /etc/systemd/system/minecraft.service  /home/miner/.config/systemd/user/minecraft.service
+
+systemctl --user enable minecraft.service
+systemctl --user start minecraft.service
+
+loginctl enable-linger miner
+```
+
 
 # Resources
 
