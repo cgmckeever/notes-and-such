@@ -113,7 +113,7 @@ touch backups/worlds.sh; chmod 755 backups/worlds.sh
 
 ```
 crontab -e
-0 */2 * * * /home/miner/backups/world.sh
+0 */2 * * * /home/miner/backups/worlds.sh
 ```
 
 ## Restore
