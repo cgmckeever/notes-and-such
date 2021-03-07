@@ -109,7 +109,6 @@ mkdir -p ~/backups/world_the_end
 
 cp minecraft-backup/backup.sh backups/
 touch backups/worlds.sh; chmod 755 backups/worlds.sh
-
 ```
 
 ```
