@@ -57,20 +57,22 @@ systemctl start minecraft.service
 systemctl stop minecraft.service
 ```
 
-```
-
 ## As User
 
 ```
-export XDG_RUNTIME_DIR="/run/user/$UID"
-export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus"
-
+loginctl enable-linger miner
 cp /etc/systemd/system/minecraft.service  /home/miner/.config/systemd/user/minecraft.service
+```
 
+```
+echo export XDG_RUNTIME_DIR="/run/user/$UID" > ~/.bash_profile
+echo export DBUS_SESSION_BUS_ADDRESS="unix:path=${XDG_RUNTIME_DIR}/bus" >> ~/.bash_profile
+cat ~/.bash_profile
+```
+
+```
 systemctl --user enable minecraft.service
 systemctl --user start minecraft.service
-
-loginctl enable-linger miner
 ```
 
 
