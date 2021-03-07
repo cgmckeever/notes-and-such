@@ -4,7 +4,7 @@ backups=/home/miner/backups
 curdate=$(date +"%Y-%m-%d")
 backup=minecraft-$curdate-backup
 
-backup_path=/tmp/backup
+backup_path=/tmp/$backup
 
 rm -rf $backup_path
 mkdir -p $backup_path
