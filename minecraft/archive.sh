@@ -21,7 +21,7 @@ done
 cd /tmp
 archive=$backup.tar.gz
 tar -czvf $archive $backup
-rm $backup
+rm -rf $backup
 
 ls -la
 echo "Archive: /tmp/$archive"
