@@ -9,7 +9,7 @@ backup_path=/tmp/$backup
 rm -rf $backup_path
 
 for world in world world_nether world_the_end; do
-    mkdir $backup_path/$world
+    mkdir -p $backup_path/$world
     file=$(ls -t1 $backups/$world/ | head -n 1)
     cp $backups/$world/$file $backup_path/$world
 
