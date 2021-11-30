@@ -5,6 +5,17 @@ apt -y update && apt -y install default-jre screen git
 apt install default-jdk vim
 ```
 
+## Update java-17
+
+```
+wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
+apt-get install libc6-i386 libc6-x32
+dpkg -i jdk-17_linux-x64_bin.deb
+
+ln -s /usr/lib/jvm/jdk-17/bin/java /etc/alternatives/java
+rm /etc/alternatives/java
+```
+
 # Install
 
 ```
