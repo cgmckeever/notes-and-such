@@ -7,6 +7,8 @@ apt install default-jdk vim
 
 ## Update java-17
 
+https://www.linuxcapable.com/how-to-install-java-17-jdk-17-on-debian-11-bullseye/
+
 ```
 wget https://download.oracle.com/java/17/latest/jdk-17_linux-x64_bin.deb
 apt-get install libc6-i386 libc6-x32
