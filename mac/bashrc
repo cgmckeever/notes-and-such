@@ -24,6 +24,15 @@ alias ecr-aws="aws ecr get-login-password \
     --region us-east-1 | docker login --username AWS \
     --password-stdin 230579579650.dkr.ecr.us-east-1.amazonaws.com"
 
+alias account="aws --profile default organizations list-accounts \
+    --query "Accounts[].{AccountName:Name,AccountID:Id}" \
+    --output text"
+
+alias gov-accounts="aws --profile gov-root organizations list-accounts \
+    --query "Accounts[].{AccountName:Name,AccountID:Id}" \
+    --output text"
+
+
 GRAY='\[\033[1;30m\]'
 RED='\[\033[1;31m\]'
 GREEN='\[\033[1;32m\]'
