@@ -25,11 +25,11 @@ alias ecr-aws="aws ecr get-login-password \
     --password-stdin 230579579650.dkr.ecr.us-east-1.amazonaws.com"
 
 alias account="aws --profile default organizations list-accounts \
-    --query "Accounts[].{AccountName:Name,AccountID:Id}" \
+    --query \"Accounts[].{AccountName:Name,AccountID:Id}\" \
     --output text"
 
 alias gov-accounts="aws --profile gov-root organizations list-accounts \
-    --query "Accounts[].{AccountName:Name,AccountID:Id}" \
+    --query \"Accounts[].{AccountName:Name,AccountID:Id}\" \
     --output text"
 
 
