@@ -24,6 +24,7 @@ network={
 ### Video
 
 - https://elinux.org/RPiconfig
+- 166x1200 (group 2 / mode 51)
 
 ### Audio
 
