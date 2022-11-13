@@ -50,6 +50,10 @@ fi
 - `xrandr --output HDMI-2 --off -display :0.0`
 - `xrandr --output HDMI-2 --mode 1280x1024 -display :0.0`
 
+- https://forum.batocera.org/d/4327-forcing-different-screen-resolution
+- https://askubuntu.com/questions/377937/how-do-i-set-a-custom-resolution
+
+
 # Controllers
 
 ##  Test
@@ -62,6 +66,7 @@ fi
 - https://www.youtube.com/watch?v=0_aIkkObZWM
 - https://neo-source.com/index.php?topic=3709.0
 - https://forums.libretro.com/t/fb-neo-control-issues/34077/16
+- Sensitivity: https://neo-source.com/index.php?topic=3986.0
 
 
 # Cores
