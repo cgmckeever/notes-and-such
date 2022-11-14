@@ -82,6 +82,12 @@ fi
 
 - [Keyboard input to get into MAME menu](https://www.reddit.com/r/batocera/comments/r5qxzh/having_trouble_with_mame_2003_plus_arcade_button/)
 
+## Roms
+
+- /userdata/roms/CORE
+- `gamelist.xml` per core folder
+- `media/TYPE` per core folder
+
 ## Per game settings
 
 https://forum.batocera.org/d/6652-being-able-to-use-trackball-and-spinner-using-per-mouse-index
@@ -96,4 +102,8 @@ mame["tempest3.zip"].retroarch.input_analog_sensitivity=-5
 
 ### Tempest
 
-- GRS button-hole 20% sensitivity
+- move to mame-core
+
+### GT99
+
+- move to mame-core
