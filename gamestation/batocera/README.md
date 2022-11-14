@@ -1,5 +1,14 @@
 # General
 
+## SD Extender issues
+
+- https://forums.raspberrypi.com/viewtopic.php?t=269457
+
+`cmdline.txt`
+```
+sdhci.debug_quirks2=4
+```
+
 - scripts https://wiki.batocera.org/launch_a_script
 - keys https://wiki.batocera.org/scripting_function_keys
 
