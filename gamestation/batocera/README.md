@@ -12,7 +12,7 @@ sdhci.debug_quirks2=4
 - scripts https://wiki.batocera.org/launch_a_script
 - keys https://wiki.batocera.org/scripting_function_keys
 
-## CLI Quit REtroarch
+## CLI Quit Retroarch
 
 - https://github.com/libretro/RetroArch/issues/4718
 
@@ -21,6 +21,17 @@ sdhci.debug_quirks2=4
 
 echo QUIT > /dev/udp/127.0.0.1/55355
 #/usr/bin/retroarch --verbose --command QUIT
+```
+
+## batocera.conf
+
+- see custom conf file
+
+```
+#!/bin/bash
+
+cp batocera.core.conf batocera.conf
+cat batocera.v34.cnf >> batocera.conf
 ```
 
 ## Keyboard Shortcuts
@@ -81,18 +92,18 @@ fi
 - `sdl2-jstest -l`
 - `evtest`
 
+## Custom Retroarch
+
+- https://forum.batocera.org/d/3041-solved-user-binds-buttons-in-retroarch-resetting-after-i-reopen-game
+- https://forum.batocera.org/d/8738-changing-port-device-does-not-update-bindings/2
+- https://forums.libretro.com/t/creating-hotkey-alternates-for-multiple-controllers/24093/4
+
 ## Spinner
 
 - https://www.youtube.com/watch?v=0_aIkkObZWM
 - https://neo-source.com/index.php?topic=3709.0
 - https://forums.libretro.com/t/fb-neo-control-issues/34077/16
 - Sensitivity: https://neo-source.com/index.php?topic=3986.0
-
-## Custom Retroarch
-
-- https://forum.batocera.org/d/3041-solved-user-binds-buttons-in-retroarch-resetting-after-i-reopen-game
-- https://forum.batocera.org/d/8738-changing-port-device-does-not-update-bindings/2
-
 
 # Cores
 
@@ -107,14 +118,6 @@ fi
 ## Per game settings
 
 https://forum.batocera.org/d/6652-being-able-to-use-trackball-and-spinner-using-per-mouse-index
-
-### batocera.conf
-
-```
-## CUSTOM
-mame["tempest3.zip"].retroarch.input_player1_mouse_index=1
-mame["tempest3.zip"].retroarch.input_analog_sensitivity=-5
-```
 
 ### Tempest
 
