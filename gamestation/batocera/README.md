@@ -15,24 +15,11 @@ sdhci.debug_quirks2=4
 ## CLI Quit Retroarch
 
 - https://github.com/libretro/RetroArch/issues/4718
-
-```
-#!/bin/bash
-
-echo QUIT > /dev/udp/127.0.0.1/55355
-#/usr/bin/retroarch --verbose --command QUIT
-```
+- `/userdata/system/configs/scripts/ra-quit.sh`
 
 ## batocera.conf
 
-- see custom conf file
-
-```
-#!/bin/bash
-
-cp batocera.core.conf batocera.conf
-cat batocera.v34.cnf >> batocera.conf
-```
+- `/userdata/system/configs/scripts/conf.sh`
 
 ## Keyboard Shortcuts
 
@@ -43,35 +30,8 @@ KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_E 1  /userdata/system/configs/scripts
 KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_F 1  /sbin/reboot
 ```
 
-`/userdata/system/configs/scripts/shutdown.sh`
-```
-#!/bin/bash
-
-xrandr --output HDMI-2 --mode 1280x1024 -display :0.0
-
-sleep 2
-
-echo rebooting | LANG=en_US HOME=/userdata/system XAUTHORITY=/var/lib/.Xauthority DISPLAY=:0.0 osd_cat -f -*-*-bold-*-*-*-38-120-*-*-*-*-*-* -cred -s 3 -d 4
-
-sleep 2
-
-/sbin/shutdown -h now
-```
-
-`/userdata/system/configs/scripts/screen.sh`
-```
-#!/bin/bash
-
-SCREEN=$(xrandr -q -display :0.0 | grep \*)
-
-if [ "$SCREEN" == "" ]; then
-  xrandr --output HDMI-2 --mode 1280x1024 -display :0.0
-  batocera-audio setSystemVolume unmute
-else
-  xrandr --output HDMI-2 --off -display :0.0
-  batocera-audio setSystemVolume mute
-fi
-```
+- `/userdata/system/configs/scripts/shutdown.sh`
+- `/userdata/system/configs/scripts/screen.sh`
 
 # Monitor
 
