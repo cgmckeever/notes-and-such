@@ -26,7 +26,7 @@ sdhci.debug_quirks2=4
 `/userdata/system/configs/multimedia_keys.conf`
 ```
 KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_D 1  /userdata/system/configs/scripts/shutdown.sh
-KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_E 1  /userdata/system/configs/scripts/screen.sh
+KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_E 1  /userdata/system/configs/scripts/quit-ra.sh
 KEY_LEFTCTRL+KEY_LEFTSHIFT+KEY_LEFTALT+KEY_F 1  /sbin/reboot
 ```
 
