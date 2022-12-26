@@ -14,7 +14,7 @@ if [ ${input:-n} = "y" ]; then
 fi
 
 echo "test"
-rsync $dry -vvh -rc --delete --delete-excluded \
+rsync $dry -vvh -rlc --delete --delete-excluded \
   --include '/decorations/***' \
   --include '*/' \
   --include 'gamelist.xml' \

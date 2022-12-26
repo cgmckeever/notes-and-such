@@ -16,7 +16,7 @@ fi
 echo
 echo
 
-rsync $dry -vvh -rc --delete \
+rsync $dry -vvh -rlc --delete \
   --include 'roms/*' \
   --include 'gamelist.xml' \
   --exclude 'bios/**' \
