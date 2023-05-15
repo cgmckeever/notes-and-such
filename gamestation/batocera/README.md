@@ -1,5 +1,13 @@
 # General
 
+## Utility
+
+- https://wiki.batocera.org/access_the_batocera_via_ssh#batocera_es_swissknife_dev_tools
+
+## mount boot
+
+- `mount -o remount,rw /boot`
+
 ## SD Extender issues
 
 - https://forums.raspberrypi.com/viewtopic.php?t=269457

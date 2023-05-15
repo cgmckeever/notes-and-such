@@ -4,6 +4,12 @@ clear
 echo
 echo
 
+dest="/Volumes/games/raspberry-pi/images/collections/batocera/pi4/12K.Gold.Batocera.128GB.Rpi4-Wolfanoz/userdata/sync"
+
+ls -la $dest
+
+echo
+echo
 echo -n "Full execution [y]?  "
 read input
 
@@ -25,7 +31,7 @@ rsync $dry -vvh -rlc --delete --delete-excluded \
   --exclude '/roms/***' \
   --exclude 'batocera.core*' \
   --exclude 'batocera.conf*' \
-  root@192.168.2.48:/userdata/ /Users/cgmckeever/code/notes-and-such/gamestation/batocera/userdata/wolf128v34/ | tee /tmp/arcade-full-sync.txt
+  root@192.168.2.48:/userdata/ $dest | tee /tmp/arcade-full-sync.txt
 
 exit
 
